@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Acesso refugiado - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#005EB8",
+                        "primary-hover": "#004a91",
+                        "surface-container": "#F2F7FB",
+                        "surface-bright": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#54536f",
+                        "outline-variant": "#E0E5E9",
+                        "on-error": "#fff7f6",
+                        "on-primary-container": "#005EB8",
+                        "background": "#F8FAFC",
+                        "surface-container-high": "#EBF1F5",
+                        "secondary-dim": "#3d5762",
+                        "tertiary-dim": "#51516c",
+                        "tertiary": "#5d5c78",
+                        "surface-container-low": "#F8FAFC",
+                        "error": "#B00020",
+                        "on-secondary-container": "#3c5561",
+                        "surface-variant": "#E1E7EC",
+                        "tertiary-fixed": "#d9d7f8",
+                        "on-surface-variant": "#64748B",
+                        "surface": "#FFFFFF",
+                        "error-dim": "#4e0309",
+                        "surface-container-highest": "#E2E8F0",
+                        "on-error-container": "#B00020",
+                        "tertiary-fixed-dim": "#cbc9e9",
+                        "secondary-fixed-dim": "#bdd9e6",
+                        "on-secondary-fixed-variant": "#455f6b",
+                        "primary-dim": "#004a91",
+                        "on-tertiary-fixed": "#383751",
+                        "tertiary-container": "#d9d7f8",
+                        "on-primary-fixed-variant": "#005EB8",
+                        "secondary": "#475569",
+                        "on-surface": "#0F172A",
+                        "secondary-container": "#E2E8F0",
+                        "on-background": "#0F172A",
+                        "inverse-on-surface": "#94A3B8",
+                        "on-secondary": "#FFFFFF",
+                        "on-primary": "#FFFFFF",
+                        "surface-dim": "#F1F5F9",
+                        "inverse-surface": "#0F172A",
+                        "outline": "#94A3B8",
+                        "surface-container-lowest": "#FFFFFF",
+                        "primary-container": "#E0E7FF",
+                        "primary-fixed": "#E0E7FF",
+                        "on-tertiary": "#FFFFFF",
+                        "inverse-primary": "#73a3f8",
+                        "primary-fixed-dim": "#C7D2FE",
+                        "secondary-fixed": "#E2E8F0",
+                        "on-tertiary-container": "#4b4a65",
+                        "on-primary-fixed": "#002142",
+                        "error-container": "#FEE2E2",
+                        "surface-tint": "#005EB8",
+                        "on-secondary-fixed": "#1E293B"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope", "Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        h1, h2, h3, .font-headline {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex items-center justify-center p-4 md:p-8">
+<!-- Background Decoration -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"></div>
+<div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[120px]"></div>
+</div>
+<!-- Login Container -->
+<main class="relative z-10 w-full max-w-[1080px] grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-outline-variant/30">
+<!-- Left Side: Visual/Branding Section -->
+<section class="hidden md:flex flex-col justify-between p-12 bg-primary relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="high-tech secure digital network background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlNWc7PUPjNbI_9gSmc3Czlm1dXq3DYwaYHvf3SbZxoTDphSZ7RBGYgTiuo1oZmJ-xPCUoKiq9xxy19TslJE_Dl-Y-mxECfR05X8UrRIiooQ561Y112lawKEBwEZBdOf1_Fq7P3qN8SrzJDwm0xkhunXQhqnBI0xQfcOC7yKsyqSPZwr-aWXLOnjFl-lEgCOCbspO2gf8iBzOobsk03Z5xc95SwrdM1vn2e6tGT-jgEhiwziQzFJ1Lb2yVchNCYg0uXGH0NQuaIyQ"/>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-16">
+<div class="w-10 h-10 bg-white/15 backdrop-blur-xl rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<span class="font-headline font-extrabold text-xl tracking-tight text-white">Acesso refugiado</span>
+</div>
+<h1 class="text-4xl lg:text-5xl font-headline font-bold text-white leading-[1.1] mb-6">
+                    Acesso à Plataforma
+                </h1>
+<p class="text-white/80 text-lg font-body max-w-sm leading-relaxed">
+                    Portal de auxilio a refugiados de gaza.
+                </p>
+</div>
+<div class="relative z-10 mt-auto">
+<div class="flex items-center gap-4 text-white/70 text-sm">
+<div class="flex -space-x-2.5">
+<img class="h-8 w-8 rounded-full border-2 border-primary object-cover" data-alt="user portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQjeEz-2-yLM7CxVtVi_W3j2FVlz89NmasugsNic4uAxEoxVPn0kw1Tflj77kto_ZIE4cq-6w7JAgA4W-CTBGYa4mxumihDHKO0dyf9hcsYMoCi7zIBSltRKcTvKRl7I7cGk6LLAyz3UcCTsxB1psrcHmsRR6q7XES-XpRl-rG50798dueN4vuV0EOzgChmTrJpfL1CGNFJPvunvlYKwZFUxz8wp-SK_rdwNGocD5WC2pHEHpot9U_BJluUu07DQc0t6lIibSdnro"/>
+<img class="h-8 w-8 rounded-full border-2 border-primary object-cover" data-alt="user portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKHUkdrnd3oVPlIg8CtjjtvaM00fTRoWbTCm-3GYiX7mNzIq82DC8Xpsvt4aZcbUmKxsrCiMnfoY4x1XXif1VsG8JI4u09Osb0_fd8gkC53L1hZC_lv6edyswneW4LAXtkO3QOPCeDCijF42sZn9kcfmbCTaApyUjbzJpQDmsoGG_G1XoeIfcwXhCz20c_bKGALD6XLf6V-qFgzMzEYAR3LsjZtwgi8FXwDav6XwYjn-k3azFBdspIbJaEEty-qY5z3ZeTYZEkLvE"/>
+<div class="h-8 w-8 rounded-full border-2 border-primary bg-primary-dim flex items-center justify-center text-[10px] font-bold text-white">+12k</div>
+</div>
+<p class="font-medium">Utilizado globalmente por agências humanitárias.</p>
+</div>
+</div>
+</section>
+<!-- Right Side: Login Form Section -->
+<section class="flex flex-col justify-center p-8 md:p-16 bg-white">
+<div class="max-w-md w-full mx-auto">
+<div class="mb-10 text-left">
+<div class="md:hidden flex mb-8">
+<span class="material-symbols-outlined text-primary text-4xl">security</span>
+</div>
+<h2 class="text-3xl font-headline font-bold text-on-surface tracking-tight mb-3">Bem-vindo de volta</h2>
+<p class="text-on-surface-variant font-body">Insira suas credenciais</p>
+</div>
+<!-- Subtle Error/Info Box (Optional display based on context) -->
+<div class="mb-6 flex items-center gap-3 p-4 bg-error-container/40 border-l-4 border-error rounded-r-xl hidden" id="error-alert">
+<span class="material-symbols-outlined text-error text-xl" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-on-error-container text-sm font-medium">Credenciais incorretas. Tente novamente.</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-[13px] font-bold text-on-surface uppercase tracking-wider mb-2" for="email">E-mail</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="email" name="email" placeholder="exemplo@organizacao.org" required="" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block text-[13px] font-bold text-on-surface uppercase tracking-wider" for="password">Chave de Acesso</label>
+<a class="text-xs font-bold text-primary hover:underline transition-all" href="#">Redefinir senha</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="block w-full pl-11 pr-12 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="password" name="password" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center">
+<input class="h-4.5 w-4.5 text-primary focus:ring-primary/20 border-outline-variant rounded cursor-pointer" id="remember-me" name="remember-me" type="checkbox"/>
+<label class="ml-2.5 block text-sm text-on-surface-variant font-medium cursor-pointer" for="remember-me">Lembrar neste dispositivo</label>
+</div>
+<a class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-[0_8px_20px_rgba(0,94,184,0.25)] hover:bg-primary-hover hover:shadow-[0_10px_25px_rgba(0,94,184,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 no-underline" href="{{DATA:SCREEN:SCREEN_12}}">
+<span>Entrar no Sistema</span>
+<span class="material-symbols-outlined text-[20px]">login</span>
+</a>
+</form>
+<div class="mt-10 text-center">
+<p class="text-on-surface-variant text-sm font-medium">
+                        Novo por aqui? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Registrar</a>
+</p>
+</div>
+<!-- Security Badges -->
+<div class="mt-12 flex items-center justify-center gap-8 pt-8 border-t border-outline-variant/50">
+<div class="flex items-center gap-2 text-outline/70">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">SSL Encrypted</span>
+</div>
+<div class="flex items-center gap-2 text-outline/70">
+<span class="material-symbols-outlined text-[18px]">gpp_good</span>
+<span class="text-[11px] font-bold uppercase tracking-widest">ISO 27001</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="fixed bottom-6 left-0 right-0 flex flex-col md:flex-row justify-center items-center gap-6 px-6 pointer-events-none">
+<div class="flex items-center gap-4 pointer-events-auto bg-white/80 backdrop-blur-md py-2.5 px-5 rounded-full border border-outline-variant shadow-sm">
+<button class="text-xs font-bold text-primary transition-colors">Português</button>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<button class="text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors">English</button>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<button class="text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors">Français</button>
+</div>
+<p class="text-[10px] text-on-surface-variant font-bold tracking-wider uppercase opacity-60">
+            © 2026 ACESSO REFUGIADO
+        </p>
+</footer>
+</body></html>
