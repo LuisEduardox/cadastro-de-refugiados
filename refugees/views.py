@@ -1,3 +1,25 @@
-from django.shortcuts import render
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from .models import Refugees
 
 # Create your views here.
+class RefugeesListView(ListView):
+    model = Refugees
+    template_name = 'refugees/registros.html'
+
+class RefugeesCreateView(CreateView):
+    model = Refugees
+    template_name = 'refugees/create_refugee.html'
+    fields = ["name", "address", "age", "religion", "political_affiliation", "profession", "number_of_children", "family_income", "education_level"]
+    success_url = reverse_lazy("registros") # Se lembrar de altera para home page
+
+class RefugeesUpdateView(UpdateView):
+    model = Refugees
+    template_name = 'refugees/update_refugee.html'
+    fields = ["name", "address", "age", "religion", "political_affiliation", "profession", "number_of_children", "family_income", "education_level"]
+    success_url = reverse_lazy("registros") # Se lembrar de altera para home page
+
+class RedfugeesDeleteView(DeleteView):
+    model = Refugees
+    template_name = 'refugees/delete_refugee'
+    success_url = reverse_lazy("registros") # Se lembrar de altera para home page

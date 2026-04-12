@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Registros
+{% endblock page_title %}
+
+{% block content %}
+    <h1>Registros de refugiados</h1>
+    {% for refugee in refugees_list %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Profissão</th>
+                    <th>Formação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ refugee.name }}</td>
+                    <td>{{ refugee.age}}</td>
+                    <td>{{ refugee.profession}}</td>
+                    <td>{{ refugee.get_education_level_display}}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% endfor %}
+{% endblock content %}
