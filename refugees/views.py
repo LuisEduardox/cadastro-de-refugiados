@@ -19,7 +19,7 @@ class RefugeesUpdateView(UpdateView):
     fields = ["name", "address", "age", "religion", "political_affiliation", "profession", "number_of_children", "family_income", "education_level"]
     success_url = reverse_lazy("registros") # Se lembrar de altera para home page
 
-class RedfugeesDeleteView(DeleteView):
+class RefugeesDeleteView(DeleteView):
     model = Refugees
-    template_name = 'refugees/delete_refugee'
+    template_name = 'refugees/delete_refugee.html'
     success_url = reverse_lazy("registros") # Se lembrar de altera para home page
