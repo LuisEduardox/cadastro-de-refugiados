@@ -1,0 +1,15 @@
+<h1>register</h1>
+
+<form action = "{% url 'register' %}" method = "POST">{% csrf_token %}
+    <div>
+        <br>
+        <input type="text" name="username" placeholder= "username">
+        <br>
+        <input type="email" name= "email" placeholder= "email">
+        <br>
+        <input type="password" name = "password" placeholder= "senha">
+        <br>
+        <input type="submit" value = "registrar">
+        <br>
+    </div>
+</form>
