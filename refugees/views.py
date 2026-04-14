@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from .models import Refugees
 
 # Create your views here.
-class HomeTemplateView(TemplateView):
+class DashboardTemplateView(TemplateView):
     template_name = 'dashboard.html'
 
 class RefugeesListView(ListView):
