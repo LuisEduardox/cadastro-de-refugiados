@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Resgistrar
+{% endblock page_title %}
+
+{% block content %}
+    <h1>Resgistrar refugiado</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Salvar</button>
+        <a href="{% url 'registros' %}">Cancelar</a>
+    </form>
+{% endblock content %}

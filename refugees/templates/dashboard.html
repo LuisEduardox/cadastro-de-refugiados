@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Guardian Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#255dad",
+                        "surface-container": "#eaeff1",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#54536f",
+                        "outline-variant": "#abb3b7",
+                        "on-error": "#fff7f6",
+                        "on-primary-container": "#0f509f",
+                        "background": "#f8f9fa",
+                        "surface-container-high": "#e3e9ec",
+                        "secondary-dim": "#3d5762",
+                        "tertiary-dim": "#51516c",
+                        "tertiary": "#5d5c78",
+                        "surface-container-low": "#f1f4f6",
+                        "error": "#9f403d",
+                        "on-secondary-container": "#3c5561",
+                        "surface-variant": "#dbe4e7",
+                        "tertiary-fixed": "#d9d7f8",
+                        "on-surface-variant": "#586064",
+                        "surface": "#f8f9fa",
+                        "error-dim": "#4e0309",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-error-container": "#752121",
+                        "tertiary-fixed-dim": "#cbc9e9",
+                        "secondary-fixed-dim": "#bdd9e6",
+                        "on-secondary-fixed-variant": "#455f6b",
+                        "primary-dim": "#1151a0",
+                        "on-tertiary-fixed": "#383751",
+                        "tertiary-container": "#d9d7f8",
+                        "on-primary-fixed-variant": "#215aaa",
+                        "secondary": "#49636f",
+                        "on-surface": "#2b3437",
+                        "secondary-container": "#cbe7f5",
+                        "on-background": "#2b3437",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-secondary": "#f2faff",
+                        "on-primary": "#f7f7ff",
+                        "surface-dim": "#d1dce0",
+                        "inverse-surface": "#0c0f10",
+                        "outline": "#737c7f",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#d7e2ff",
+                        "primary-fixed": "#d7e2ff",
+                        "on-tertiary": "#fbf7ff",
+                        "inverse-primary": "#73a3f8",
+                        "primary-fixed-dim": "#c1d5ff",
+                        "secondary-fixed": "#cbe7f5",
+                        "on-tertiary-container": "#4b4a65",
+                        "on-primary-fixed": "#003e81",
+                        "error-container": "#fe8983",
+                        "surface-tint": "#255dad",
+                        "on-secondary-fixed": "#29434e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .sidebar-glass {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="fixed h-screen w-72 left-0 top-0 bg-slate-100/80 dark:bg-slate-900/80 sidebar-glass border-r border-slate-200/20 flex flex-col py-8 px-4 z-50">
+<div class="mb-10 px-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<h1 class="font-headline font-black text-slate-800 leading-tight text-sm uppercase tracking-wider">Guardian Ledger</h1>
+<p class="text-[10px] text-on-surface-variant font-semibold uppercase tracking-widest">Institutional Portal</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="bg-primary-container/50 text-on-primary-container rounded-xl font-semibold px-4 py-3 flex items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body text-sm">Dashboard</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="person_add">group</span>
+<span class="font-body text-sm">Registrations</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+<span class="font-body text-sm">Biometrics</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-body text-sm">Security Logs</span>
+</a>
+<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body text-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200/50 space-y-2">
+<button class="w-full bg-primary text-on-primary rounded-xl py-3 px-4 font-bold text-sm shadow-md hover:shadow-lg transition-all duration-300 mb-6 flex items-center justify-center gap-2" >
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Registration
+            </button>
+<a class="text-on-surface-variant px-4 py-2 flex items-center gap-3 hover:text-primary transition-colors text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="text-on-surface-variant px-4 py-2 flex items-center gap-3 hover:text-error transition-colors text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-72 min-h-screen">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-40 bg-slate-50/80 backdrop-blur-xl flex justify-between items-center w-full px-10 py-4 border-b border-slate-200/20 shadow-sm h-16">
+<div class="flex items-center gap-8">
+<h2 class="font-headline font-bold text-lg tracking-tight text-on-surface">Sistema Seguro de Cadastro de Refugiados</h2>
+<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/15">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder:text-on-surface-variant/60" placeholder="Search records..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Agente Administrativo</p>
+<p class="text-[10px] text-on-surface-variant">ID: 44290-X</p>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Professional portrait of a man in business casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1BD-_216fXmWGn1DCi1h9-VYhWIXJkEGruWi4D4MzQHkMSwlFQomyUhVCug4806WNTZcG9Ezdt2lLT56Ky2puK8L0AYpEqaj3DjHuJCgz1mel662QbePGl0S5qDcxvKrZrFo2I2P8WEBxCU74b4ZVu612PHTFLvNOoPMst0qVto4sat70oIaA_YtQaF7SnQRqz6XCszYxBqoW6JBzEKKZWafuDnbWsO1ZZnAFYDqyqvoK6SZRy4I2pL5dNEvJIAPTuynjZer9a4c"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-10 max-w-7xl mx-auto">
+<!-- Welcome Section -->
+<section class="mb-12">
+<h1 class="text-5xl font-extrabold text-on-surface tracking-tight mb-4">Bem-vindo, Agente.</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Sua estação de trabalho está segura e sincronizada. Gerencie novos registros e monitore estatísticas biométricas em tempo real.
+                </p>
+</section>
+<!-- Bento Grid Dashboard -->
+<div class="grid grid-cols-12 gap-6">
+<!-- Main Stat Card -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-8 rounded-[2rem] shadow-[0_12px_40px_rgba(43,52,55,0.04)] flex flex-col justify-between relative overflow-hidden group border border-outline-variant/10">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-6">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="group">group</span>
+</div>
+<h3 class="text-on-surface-variant font-bold tracking-widest uppercase text-xs">Total Registered Refugees</h3>
+</div>
+<div class="flex items-baseline gap-4">
+<span class="text-7xl font-extrabold text-on-surface tracking-tighter leading-none">12,842</span>
+<span class="text-primary font-bold text-lg flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                                +4.2%
+                            </span>
+</div>
+</div>
+<div class="mt-12 flex gap-4 relative z-10">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-dim transition-all shadow-lg shadow-primary/20" ">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                            Cadastrar Refugiado
+                        </a>
+<a class="bg-surface-container text-on-surface px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-surface-container-high transition-all" >
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+                            Ver Registros
+                        </a>
+</div>
+<!-- Decorative background graphic -->
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none transform translate-x-1/4 translate-y-1/4">
+<span class="material-symbols-outlined text-[300px]" data-icon="public">public</span>
+</div>
+</div>
+<!-- Secondary Stats Column -->
+<div class="col-span-12 lg:col-span-4 grid grid-rows-2 gap-6">
+<div class="bg-secondary-container/30 p-6 rounded-[2rem] flex flex-col justify-center border border-white/40">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Secure</span>
+</div>
+<h4 class="text-on-secondary-container font-medium text-sm">Biometrics Verified</h4>
+<p class="text-3xl font-bold text-on-secondary-container mt-1">98.4%</p>
+</div>
+<div class="bg-tertiary-container/30 p-6 rounded-[2rem] flex flex-col justify-center border border-white/40">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="pending_actions">pending_actions</span>
+</div>
+<h4 class="text-on-tertiary-container font-medium text-sm">Pending Approval</h4>
+<p class="text-3xl font-bold text-on-tertiary-container mt-1">156</p>
+</div>
+</div>
+<!-- Recent Activity Section -->
+<div class="col-span-12 mt-6">
+<div class="flex items-center justify-between mb-8">
+<h3 class="text-2xl font-bold text-on-surface tracking-tight">Recent Registrations</h3>
+<a class="text-primary font-bold text-sm hover:underline flex items-center gap-1" >
+                            View all history
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Registration Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all group border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/10">
+<img alt="Applicant" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxxPvl_xrCRjtn_cEwvcf8u3OR7l3CrBwgRYyW2HOtzbSTXTQX5VMo3Uq1ggA4ADmrkwbe6beb--MXLo9U0kCxHI1p_K7WbOUDtcuSVcEU6c3lpF_v0uxfBn0M-QtqE_Y_-vcXp4lUOW5nmCU0WttnSA7PG18HvLn6VzT342Htwy4eW_96mp7BCC0Sr8xvDgQCUK08w3l8kVS0_tQVjBLF70yxQPiJXz-1hkY8GtLWHbVFDWiGbDTDsZfwvorKJgfbwnhnrYrq-H8"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold text-on-surface">Amara Okafor</h5>
+<p class="text-xs text-on-surface-variant">Registered 2h ago</p>
+</div>
+<button class="material-symbols-outlined text-outline-variant/30 hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-[10px] font-bold text-on-surface-variant">ID: #8821</span>
+<span class="bg-primary/5 text-primary px-3 py-1 rounded-full text-[10px] font-bold">BIOMETRIC OK</span>
+</div>
+</div>
+<!-- Registration Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all group border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/10">
+<img alt="Applicant" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDmrTo2drrbKFHQGsIFsdg3ox-gMNEuiRmbnFwcJRuo1cF0WBegNByr6UDuiXvd-1f_oN09C-sKZbsUZ5T98NUt3RGdz8G4kZ_BUt1B9Ay_JCa28NXL-m4NVm8nUgm_Spj2iVY5CHnJN8nxFdgoPhfES67L0ayoPtFa48lPIbuOCqjzBdR683wVZT3-i5am_H0HebmvTR7rkBfnMk_T-07YksL27FPkPKunheM6noismWui18JepAGxqu79ZSZ5Cab7XqQsRABq5Q"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold text-on-surface">Mateo Silva</h5>
+<p class="text-xs text-on-surface-variant">Registered 5h ago</p>
+</div>
+<button class="material-symbols-outlined text-outline-variant/30 hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-[10px] font-bold text-on-surface-variant">ID: #8819</span>
+<span class="bg-error/5 text-error px-3 py-1 rounded-full text-[10px] font-bold uppercase">Pending Docs</span>
+</div>
+</div>
+<!-- Registration Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-[1.5rem] hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all group border border-outline-variant/10">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/10">
+<img alt="Applicant" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA63dmpsgB3PmXZwLjosTXBfdwxYdDUYUqePQLXwEEmmm14d-0gYarAZ873-QGAIn9MDYGRqyJBEWvZYz3IwWK5MVQvljEcFsUbYAnF3lAzwl6WDi2yeWyuzuDYwioRj0JirpdLroIPJIyE-l0U8abytTEbDa--LrQNuACeuncTTnRl51xMGDBG3NuDm2tfYoQj1brttHjdniQY5_a1uE-eYgOraIxBuIqZnOqwBPaoEhzgVT2vxg2NqsxcZ26i1PY1ih2QmsJNmFo"/>
+</div>
+<div class="flex-1">
+<h5 class="font-bold text-on-surface">Elena Rossi</h5>
+<p class="text-xs text-on-surface-variant">Registered Yesterday</p>
+</div>
+<button class="material-symbols-outlined text-outline-variant/30 hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</div>
+<div class="flex gap-2">
+<span class="bg-surface-container px-3 py-1 rounded-full text-[10px] font-bold text-on-surface-variant">ID: #8792</span>
+<span class="bg-primary/5 text-primary px-3 py-1 rounded-full text-[10px] font-bold">BIOMETRIC OK</span>
+</div>
+</div>
+</div>
+</div>
+<!-- System Logs -->
+<div class="col-span-12 mt-10 bg-surface-container-low/50 p-10 rounded-[3rem] border border-outline-variant/5">
+<div class="max-w-4xl">
+<h4 class="text-xs font-black text-on-surface-variant uppercase tracking-widest mb-8">System Integrity Log</h4>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<span class="text-primary font-mono text-xs pt-1 font-bold">09:42:01</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Encrypted Sync Complete</p>
+<p class="text-xs text-on-surface-variant mt-1">Regional database synchronized with central ledger. Integrity verified.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<span class="text-primary font-mono text-xs pt-1 font-bold">08:15:30</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Agent Login: ID-44290-X</p>
+<p class="text-xs text-on-surface-variant mt-1">Secure session established from terminal 12-B. Location: UNHCR Sector 4.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start opacity-50">
+<span class="text-primary font-mono text-xs pt-1 font-bold">04:00:00</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Automated Backup Routine</p>
+<p class="text-xs text-on-surface-variant mt-1">Encrypted snapshot successfully pushed to cloud-vault.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Info -->
+<footer class="px-10 py-10 border-t border-slate-200/20 text-center">
+<p class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Guardian Ledger Framework v4.2.0 • Secured by BioVault Systems</p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guardian Ledger - Registro Institucional de Refugiados</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-dim": "#3d5762",
+                    "tertiary": "#5e5c78",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-secondary-fixed-variant": "#455f6b",
+                    "on-primary-container": "#0f509f",
+                    "surface-container-high": "#e3e9ec",
+                    "primary-container": "#d7e2ff",
+                    "outline": "#737c7f",
+                    "on-background": "#2b3437",
+                    "surface-dim": "#d1dce0",
+                    "on-error": "#fff7f6",
+                    "inverse-primary": "#73a3f8",
+                    "error": "#9f403d",
+                    "surface": "#f8f9fa",
+                    "secondary-fixed-dim": "#bdd9e6",
+                    "on-surface": "#2b3437",
+                    "on-tertiary": "#fcf7ff",
+                    "inverse-surface": "#0c0f10",
+                    "background": "#f8f9fa",
+                    "on-secondary-container": "#3c5561",
+                    "tertiary-container": "#dad6f7",
+                    "primary-fixed": "#d7e2ff",
+                    "on-primary": "#f7f7ff",
+                    "surface-container-low": "#f1f4f6",
+                    "on-tertiary-fixed": "#393751",
+                    "tertiary-fixed": "#dad6f7",
+                    "secondary": "#49636f",
+                    "error-container": "#fe8983",
+                    "on-secondary-fixed": "#29434e",
+                    "error-dim": "#4e0309",
+                    "on-tertiary-fixed-variant": "#55536f",
+                    "surface-variant": "#dbe4e7",
+                    "surface-container": "#eaeff1",
+                    "on-surface-variant": "#586064",
+                    "tertiary-fixed-dim": "#ccc9e9",
+                    "outline-variant": "#abb3b7",
+                    "on-secondary": "#f2faff",
+                    "inverse-on-surface": "#9b9d9e",
+                    "on-tertiary-container": "#4b4a65",
+                    "primary-fixed-dim": "#c1d5ff",
+                    "primary": "#255dad",
+                    "secondary-fixed": "#cbe7f5",
+                    "tertiary-dim": "#52506b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#cbe7f5",
+                    "on-primary-fixed": "#003e81",
+                    "surface-bright": "#f8f9fa",
+                    "primary-dim": "#1151a0",
+                    "on-primary-fixed-variant": "#215aaa",
+                    "surface-tint": "#255dad",
+                    "on-error-container": "#752121"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope", "sans-serif"],
+                    "body": ["Inter", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100 font-headline">
+                Guardian Ledger
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 dark:border-blue-300 pb-1 font-label text-sm font-medium" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-label text-sm font-medium" href="#">Security</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-label text-sm font-medium" href="#">About</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded font-medium text-sm transition-all active:scale-95 duration-150 shadow-md">
+                    Login
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-10 grayscale-[0.5]" data-alt="Abstract global digital network connections with soft blue glowing lines on a dark background representing high-tech security and connectivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAREQgwAYDXKm41n6IzJbgE64PW0Wdr3Jt-PEcmkJRAHoML0UDOqO17s0RQIjRa8pkIAJJTO_ffkYFa1mqAl0LfxA5VprU3YQn9lSwwuXoU_0MWEipuIZz2N-o0SqI7djqLqGQxsEI9Daejnp5dfP3vgnTpSV8oTKYK2fLINULjUh0rHcf5sfhb_u0DC1XhGmNKji5zz9qzt0yHGjQDvy9NMg98EbxGDQJCD-cO7CvraVSiBH_9l_BL2oXQlwGDc2r91mR75fzTwg"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-surface via-surface/90 to-primary-container/20"></div>
+</div>
+<div class="container max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-semibold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                        Soberania de Dados Garantida
+                    </div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-on-surface leading-tight tracking-tight">
+                        Segurança e Integridade no Registro de <span class="text-primary">Refugiados</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                        Uma plataforma institucional robusta para gestão eficiente e segura de dados humanitários, desenhada para governos e agências globais.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-dim transition-all shadow-xl shadow-primary/20 active:scale-95 flex items-center gap-2">
+                            Conheça o Sistema
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white border-2 border-outline-variant text-on-surface-variant px-8 py-4 rounded-lg font-bold text-lg hover:bg-surface-container transition-all active:scale-95">
+                            Falar com Consultor
+                        </button>
+</div>
+</div>
+<div class="hidden lg:block relative">
+<div class="absolute -inset-4 bg-primary/10 blur-3xl rounded-full"></div>
+<div class="relative bg-white/40 backdrop-blur-xl border border-white/60 p-4 rounded-2xl shadow-2xl overflow-hidden aspect-[4/3]">
+<img class="w-full h-full object-cover rounded-xl shadow-inner" data-alt="Professional UI dashboard interface showing secure data analytics, encryption status charts, and global map on a clean minimalist workstation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZyD4F_vuHcbIJTf7Nk_mP0KXwMPZXjQdZjdAHl5gCY8syXlUn2KnOXnwrNJXq0XABupdzfCsqdVbONS-NU7uFMkL2kRCeo0lOn4FkHc9CPl4v47v8LL0VCf18g4saw5oZLoluLt1R1Rfumy8MUNj8k0YaS6gdY2_0J_tdaTf_AIdh8H-wNiaIt0XnnlCpSgl6JSNHRkv1gWOnwfSyEUS72RzCO9m7zHIgRXAJyivny3TjyxT9Vq-bjSBQpIvUD32MqPn1KrRZa1Y"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-24 bg-surface">
+<div class="container max-w-7xl mx-auto px-6">
+<div class="mb-16 text-center">
+<h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-4">Pilares Tecnológicos</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Excelência técnica aplicada à proteção de identidades vulneráveis e gestão de crises.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1 -->
+<div class="md:col-span-2 group relative bg-white border border-surface-container-high rounded-2xl p-8 hover:shadow-2xl transition-all overflow-hidden">
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="w-12 h-12 bg-primary-container text-primary rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Criptografia de Ponta</h3>
+<p class="text-on-surface-variant leading-relaxed max-w-md">
+                                    Implementamos os padrões mais rigorosos da indústria para garantir que cada registro seja imutável e acessível apenas por pessoal autorizado. Proteção militar para dados sensíveis.
+                                </p>
+</div>
+<div class="mt-12 flex gap-4">
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-secondary">AES-256</span>
+<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-secondary">End-to-End</span>
+</div>
+</div>
+<img class="absolute right-[-10%] bottom-[-10%] w-2/3 h-2/3 object-contain opacity-10 group-hover:opacity-20 transition-opacity" data-alt="Close up of futuristic glowing digital server hardware in a dark room with blue and white light trails representing data flow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9jd--hL_IRh4_VCbuWlgIYQBefeD9gTEHKay1idadya6_LF-ZKihf6bFinRlzphwXg2WBt4t6beKrGTNpf-ERtd9t0f3iq6y76EqkfXDXAbI9P4hD_eVC9aRWALVAf2vRvKQzJO-WoAafAauyvlaDCam0NbWsvvt8bTLSbJ89n-MRwidx0c-aGVmLawPUyBEDtUPrNXk1Wyt2mFF-DpZvj88fjDfbAldibGbeyzwjij9deaKHLov3QuMKKkYoeceShzSAUr2BJdg"/>
+</div>
+<!-- Feature 2 -->
+<div class="bg-primary text-on-primary rounded-2xl p-8 flex flex-col justify-between hover:shadow-xl transition-all">
+<div>
+<div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">fingerprint</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Biometria Avançada</h3>
+<p class="text-white/80 leading-relaxed text-sm">
+                                Identificação biométrica multimodal para prevenir fraudes e garantir que o auxílio humanitário chegue às pessoas certas de forma rápida e digna.
+                            </p>
+</div>
+<div class="mt-8 border-t border-white/10 pt-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img data-alt="Portrait of a diverse man for user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGOVLwGj7HC6VsgXKqp1VmNWfpL_hGw-TXoR2TkwVyac6Zw3qve-m1V4DaHa0z3wUDT3oxU8jy0xN2SG2uHJ1z0tZZ0_yglQ74URPswGJHVy9c7OD0lCSdq9kgQYgyUiuuQQUlxzk7VEuzxcN0gyEiQqcvEMiEmLzefbAsQxP3OexTvlRe6Bt0QpY8nzKGfqmD48HiEhrlltCpRDWUPI--Hrc-ka4D_bxzQoAdTZbsTpxm_H2jAumk3X3sFYa1eyr1aRekBRtfmO0"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img data-alt="Portrait of a diverse woman for user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7vD23Zat8iqAFbNP178MxASagbwzTsQl24gviaT2YKf77eN1z7_ElQ3odb6Z-KKQLY60nf5kPBQIQOydoIOEGnPCdLZcyoD2Q-Km-ALQZFtcXd6OlMhdFYd2IMLfJbVOXbaXCRwKQ1u3yIxIkDdVD-Zrlo6DdgDyCwSKZKyTNP60Is9u2vxYjx5kJgyPlE6DwTkABZ6pENZ_NB60uaKwvR53zEQTY5v4anm12MZfLrryfaiHahSqrkAaQw8yjSMcCDn95VIXrW7U"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+<img data-alt="Portrait of a diverse young man for user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmgXRoma40HpWJ4nl1GrBdaeTidRIpMy9qnzRHTyVhPXWCF9r4HGBX1_L_T8VGECtmsVSdbjk9qcFILLM3WLMOBkGB6VMpRz4XNzOwcKNsm8bgdXP2Zc-zzx5fpfzr6MEehjIIl9xNqChdzQfZIlDE7ri-ScnLVs9B5me6BfI-wAfWpLavIQ0_LZDfQ03WDsnaRTkfhW5nDHdmi2VZDPAmOWxXto13wBRv7OdvRyjnbiZ7E7i1Xg_2-7yPMdWtNo_bZEXVNNlEg-w"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="bg-secondary text-on-secondary rounded-2xl p-8 flex flex-col justify-between hover:shadow-xl transition-all">
+<div>
+<div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-3xl">sync</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Sincronização em Tempo Real</h3>
+<p class="text-white/80 leading-relaxed text-sm">
+                                Capacidade operacional offline com sincronização automática via satélite ou redes locais assim que a conectividade for restabelecida.
+                            </p>
+</div>
+<div class="mt-8">
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-white w-3/4 rounded-full"></div>
+</div>
+<span class="text-[10px] uppercase font-bold mt-2 inline-block opacity-60">Status de Rede: Ativo</span>
+</div>
+</div>
+<!-- Extra Card for Visual Balance -->
+<div class="md:col-span-2 bg-surface-container rounded-2xl p-8 border border-outline-variant/30 flex flex-col md:flex-row gap-8 items-center justify-between">
+<div class="max-w-md">
+<h3 class="text-2xl font-bold mb-3 text-on-surface">Escalabilidade Global</h3>
+<p class="text-on-surface-variant">Arquitetura baseada em microsserviços pronta para suportar registros em massa em situações de emergência de larga escala.</p>
+</div>
+<div class="flex-shrink-0">
+<div class="grid grid-cols-4 gap-2">
+<div class="w-10 h-10 bg-primary/20 rounded"></div>
+<div class="w-10 h-10 bg-primary/40 rounded"></div>
+<div class="w-10 h-10 bg-primary/60 rounded"></div>
+<div class="w-10 h-10 bg-primary/80 rounded"></div>
+<div class="w-10 h-10 bg-primary/30 rounded"></div>
+<div class="w-10 h-10 bg-primary/50 rounded"></div>
+<div class="w-10 h-10 bg-primary/70 rounded"></div>
+<div class="w-10 h-10 bg-primary rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section class="py-24 relative overflow-hidden bg-white">
+<div class="container max-w-7xl mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="lg:w-1/2">
+<h2 class="text-3xl md:text-5xl font-extrabold text-on-surface mb-6 leading-tight">
+                            Conformidade e Segurança em Nível Institucional
+                        </h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                            O Guardian Ledger opera sob os mais altos padrões de conformidade internacional, garantindo que o processamento de dados humanitários respeite as soberanias nacionais e os direitos humanos fundamentais.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">verified</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-on-surface">ISO/IEC 27001</h4>
+<p class="text-on-surface-variant text-sm">Certificação de sistema de gestão de segurança da informação.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">security</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-on-surface">AES-256 bit</h4>
+<p class="text-on-surface-variant text-sm">Criptografia de disco e tráfego para proteção contra acessos não autorizados.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">gavel</span>
+</div>
+<div>
+<h4 class="font-bold text-lg text-on-surface">GDPR &amp; LGPD Compliance</h4>
+<p class="text-on-surface-variant text-sm">Estrutura preparada para as mais rígidas leis de proteção de dados.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 relative">
+<div class="aspect-square bg-slate-50 rounded-[2rem] border border-slate-100 flex items-center justify-center p-12 overflow-hidden shadow-2xl">
+<div class="relative w-full h-full flex flex-col items-center justify-center text-center space-y-6">
+<div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">policy</span>
+</div>
+<div>
+<span class="text-3xl font-black text-primary block">TRUSTED</span>
+<span class="text-on-surface-variant font-medium tracking-widest uppercase text-sm">Verified Governance</span>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full pt-8">
+<div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+<div class="text-2xl font-bold text-secondary">99.9%</div>
+<div class="text-[10px] text-on-surface-variant uppercase font-bold">Uptime Garantido</div>
+</div>
+<div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
+<div class="text-2xl font-bold text-secondary">24/7</div>
+<div class="text-[10px] text-on-surface-variant uppercase font-bold">Monitoramento</div>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_white_80%)] pointer-events-none"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="container max-w-5xl mx-auto px-6">
+<div class="bg-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 text-white/5 pointer-events-none">
+<span class="material-symbols-outlined text-[120px]">shield</span>
+</div>
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                        Pronto para modernizar sua gestão humanitária?
+                    </h2>
+<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+                        Junte-se a dezenas de organizações que já confiam na Guardian Ledger para garantir a integridade dos dados de quem mais precisa.
+                    </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-white text-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-on-primary transition-all shadow-xl active:scale-95">
+                            Solicitar Demo
+                        </button>
+<button class="bg-primary-dim border border-white/30 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all active:scale-95">
+                            Ver Documentação
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<div class="font-manrope font-semibold text-slate-900 dark:text-slate-100 text-lg mb-2">Guardian Ledger</div>
+<div class="font-inter text-sm text-slate-500 dark:text-slate-500">
+                    © 2024 Guardian Ledger. Institutional Refugee Registration Systems.
+                </div>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-inter text-sm" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-inter text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-inter text-sm" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>
