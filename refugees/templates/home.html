@@ -107,9 +107,12 @@
 <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-label text-sm font-medium" href="#">About</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded font-medium text-sm transition-all active:scale-95 duration-150 shadow-md">
+<a href="{% url "login" %}" class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded font-medium text-sm transition-all active:scale-95 duration-150 shadow-md">
                     Login
-                </button>
+                </a>
+<a href="{% url "register" %}" class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded font-medium text-sm transition-all active:scale-95 duration-150 shadow-md">
+                    Registro
+                </a>
 </div>
 </div>
 </header>

@@ -4,7 +4,7 @@ from accounts.models import User
 # Create your models here.
 
 class Refugees(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField("accounts.User", on_delete=models.CASCADE)
     name = models.CharField(max_length=150, null=False, blank=False)
     address = models.CharField(max_length=250)
     age = models.IntegerField()

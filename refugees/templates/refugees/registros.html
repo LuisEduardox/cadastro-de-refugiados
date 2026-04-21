@@ -6,30 +6,3 @@
 
 {% block content %}
     <h1>Registros de refugiados</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Profissão</th>
-                <th>Formação</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        {% for refugee in refugees_list %}
-            <tbody>
-                <tr>
-                    <td>{{ refugee.name }}</td>
-                    <td>{{ refugee.age}}</td>
-                    <td>{{ refugee.profession}}</td>
-                    <td>{{ refugee.get_education_level_display}}</td>
-                    <td>
-                        <a href="{% url 'update_refugee' pk=refugee.pk %}">Editar</a>
-                        <a href="{% url 'delete_refugee' pk=refugee.pk %}">Excluir</a>
-                    </td>
-                </tr>
-            </tbody>
-        {% endfor %}
-    </table>
-    <a href="{% url 'create_refugee' %}">Adicionar</a>
-{% endblock content %}

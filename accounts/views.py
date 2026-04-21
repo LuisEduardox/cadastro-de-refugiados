@@ -32,10 +32,10 @@ def login(request):
        
     if user is not None:
         auth_login(request, user)
-
+        
         if user.is_superuser:
             return redirect('registros')
         else:
-            return redirect('base')
+            return redirect('dashboard')
     else:
         return HttpResponse("Credenciais inválidas")
