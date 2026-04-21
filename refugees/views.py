@@ -20,6 +20,10 @@ class RefugeesCreateView(LoginRequiredMixin, CreateView):
     fields = ["name", "address", "age", "religion", "political_affiliation", "profession", "number_of_children", "family_income", "education_level"]
     success_url = reverse_lazy("registros")
     
+    def form_valid(self, form):
+        form.instance.user = self.request.user  # ← Associa o usuário
+        return super().form_valid(form)
+    
     
 class RefugeesUpdateView(LoginRequiredMixin, UpdateView):
     model = Refugees
@@ -27,7 +31,14 @@ class RefugeesUpdateView(LoginRequiredMixin, UpdateView):
     fields = ["name", "address", "age", "religion", "political_affiliation", "profession", "number_of_children", "family_income", "education_level"]
     success_url = reverse_lazy("registros")
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user 
+        return super().form_valid(form)
+
 class RefugeesDeleteView(LoginRequiredMixin, DeleteView):
     model = Refugees
     template_name = 'refugees/delete_refugee.html'
     success_url = reverse_lazy("registros")
+
+    def get_queryset(self):
+        return Refugees.objects.filter(user=self.request.user)

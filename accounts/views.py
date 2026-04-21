@@ -68,7 +68,7 @@ def login(request):
             if user.is_superuser:
                 return redirect('registros')
             else:
-                return redirect('base')
+                return redirect('dashboard')
         else:
             messages.error(request, "E-mail ou senha incorretos. Tente novamente.")
             return redirect('login')

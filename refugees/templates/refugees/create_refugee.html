@@ -343,13 +343,13 @@
                         Campos marcados com asterisco (*) são obrigatórios para a validação.
                     </div>
 <div class="flex gap-4">
-<a href="{% url 'registros' %}" class="px-8 py-3.5 rounded-xl font-semibold text-secondary hover:bg-surface-container-high transition-all inline-block text-center">
+<a href="{% url 'dashboard' %}" class="px-8 py-3.5 rounded-xl font-semibold text-secondary hover:bg-surface-container-high transition-all inline-block text-center">
                             Cancelar
                         </a>
-<button class="bg-gradient-to-br from-primary to-primary-dim text-white px-10 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2" type="submit">
+<a href="{% url "registros" %}" class="bg-gradient-to-br from-primary to-primary-dim text-white px-10 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2" type="submit">
 <span class="material-symbols-outlined" data-icon="save">save</span>
                             Salvar Registro
-                        </button>
+                        </a>
 </div>
 </div>
 </form>
