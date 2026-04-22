@@ -102,25 +102,33 @@
 <!-- SideNavBar Section -->
 <aside class="fixed h-screen w-72 left-0 top-0 bg-[#f1f4f6]/90 backdrop-blur-2xl dark:bg-slate-900/90 flex flex-col py-8 px-4 border-r border-slate-100 dark:border-slate-800 shadow-[12px_0_40px_rgba(43,52,55,0.04)] z-50">
 <div class="mb-10 px-4">
+<a href="{% url "dashboard" %}">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="flex flex-col">
 <span class="font-['Manrope'] font-black text-[#2b3437] dark:text-white uppercase tracking-widest text-xs">Guardian Ledger</span>
-<p class="text-on-surface-variant text-[10px] uppercase tracking-wider mt-1 opacity-70">Institutional Portal</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider opacity-70">Institutional Portal</p>
+</div>
+</div>
+</a>
+</div>
 </div>
 <nav class="flex-1 space-y-2">
-<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" >
+<a href="{% url "dashboard" %}" class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" >
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
 <span class="font-medium text-sm">Dashboard</span>
 </a>
-<a class="bg-[#005EB8]/10 text-[#005EB8] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
-<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<a href="{% url "registros" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">group</span>
 <span class="font-medium text-sm">Registrations</span>
 </a>
-<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-medium text-sm">Validação</span>
+<a class="bg-[#005EB8]/10 text-[#005EB8] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span class="font-medium text-sm">New Registration</span>
 </a>
 <a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-medium text-sm">Security Logs</span>
+<span class="font-medium text-sm">Validation</span>
 </a>
 <a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="settings">settings</span>
@@ -140,22 +148,22 @@
 </aside>
 <!-- Main Canvas -->
 <main class="ml-72 min-h-screen">
-<!-- TopAppBar -->
-<header class="bg-[#f8f9fa]/80 backdrop-blur-md dark:bg-slate-900/80 sticky top-0 z-40 border-b border-slate-200/20 shadow-sm flex justify-between items-center w-full px-10 py-4 max-w-full">
-<div class="flex items-center gap-4">
-<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors" >
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="arrow_back">arrow_back</span>
-</button>
-<h1 class="text-[#2b3437] dark:text-white font-extrabold text-xl tracking-tighter">Sistema Seguro de Cadastro de Refugiados</h1>
-</div>
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0 border-b border-slate-200/30 shadow-sm shadow-slate-200/90">
 <div class="flex items-center gap-6">
-<div class="relative group">
-<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer" data-icon="notifications">notifications</span>
-<span class="absolute -top-1 -right-1 w-2 h-2 bg-error rounded-full"></span>
+<div class="relative flex items-center">
+<span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-64 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar registros..." type="text"/>
 </div>
-<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="help_outline">help_outline</span>
-<div class="w-10 h-10 rounded-full bg-surface-container-high border-2 border-white shadow-sm overflow-hidden">
-<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYy-e4NWrE8pZi03un8nTAalDJErzEbrhM2-R5H6RUBrYuS7rOHr1GsMYTuNf2-wSkzgQNrqNYABAlzD-jJdgOiZ6BqmJbYMe4nV6xHmCDiQbujMBubuFlvIJpWMQP2fyNYHk8q5M5s9ZULsTHl3UsdmWaZv5m0ucZVXjYIcYYmUrv0diFU1BUyyxNpEi5RmFIkOHMv-iYBULFVrzN__f48q5_zGoxElJbui50u0ADWnT866mjrsgBRQ30sfgTLi2WXaCd8zHomak"/>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img alt="Avatar do Administrador" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNxTZXI4JJJSxYOwE1lM8QVyAls0te7sIsrjXFr4lOUYldTDKSylt5YMqTtJREjswYyKONHalyFzC3GIefIeYt2kMrH88pwPH6v6pfR6JSYHNL1Ofo4hsWmz00u50l_ZcpeDGCTcVqVO8agtNNlqyiXn6ynuvPMZY1GUlsOeQ57tJqtG2dYc4EzG036BVbbo9O3x8BxGhqkwqyAO5gPxPxYFnXjZ99uq6UgsW5jmYArBdeDupzK5v72d876P2xGlWS3vGiUBiH_Kg"/>
 </div>
 </div>
 </header>
@@ -163,13 +171,6 @@
 <div class="p-12 max-w-6xl mx-auto">
 <!-- Breadcrumbs / Editorial Header -->
 <div class="mb-12">
-<div class="flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase mb-2">
-<a class="hover:underline" >Dashboard</a>
-<span class="text-outline-variant font-normal">/</span>
-<a class="hover:underline">Registros</a>
-<span class="text-outline-variant font-normal">/</span>
-<span>Novo Registro</span>
-</div>
 <h2 class="text-5xl font-extrabold text-on-surface tracking-tight leading-tight">Novo Registro de Refugiado</h2>
 <p class="text-on-surface-variant text-lg mt-4 max-w-2xl leading-relaxed">
                     Preencha os dados abaixo com precisão. Este sistema utiliza protocolos de segurança de nível institucional para garantir a integridade e privacidade das informações coletadas.

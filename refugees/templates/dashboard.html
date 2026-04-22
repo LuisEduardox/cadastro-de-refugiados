@@ -92,83 +92,70 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface flex min-h-screen">
-<!-- SideNavBar Component -->
-<aside class="fixed h-screen w-72 left-0 top-0 bg-slate-100/80 dark:bg-slate-900/80 sidebar-glass border-r border-slate-200/20 flex flex-col py-8 px-4 z-50">
+<!-- SideNavBar Section -->
+<aside class="fixed h-screen w-72 left-0 top-0 bg-[#f1f4f6]/90 backdrop-blur-2xl dark:bg-slate-900/90 flex flex-col py-8 px-4 border-r border-slate-100 dark:border-slate-800 shadow-[12px_0_40px_rgba(43,52,55,0.04)] z-50">
 <div class="mb-10 px-4">
-<div class="flex items-center gap-3 mb-2">
-<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary">
-<span class="material-symbols-outlined" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<a href="{% url "dashboard" %}">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="flex flex-col">
+<span class="font-['Manrope'] font-black text-[#2b3437] dark:text-white uppercase tracking-widest text-xs">Guardian Ledger</span>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider opacity-70">Institutional Portal</p>
 </div>
-<div>
-<h1 class="font-headline font-black text-slate-800 leading-tight text-sm uppercase tracking-wider">Guardian Ledger</h1>
-<p class="text-[10px] text-on-surface-variant font-semibold uppercase tracking-widest">Institutional Portal</p>
 </div>
-</div>
+</a>
 </div>
 <nav class="flex-1 space-y-2">
-<a class="bg-primary-container/50 text-on-primary-container rounded-xl font-semibold px-4 py-3 flex items-center gap-3 transition-all duration-300" href="#">
+<a class="bg-[#005EB8]/10 text-[#005EB8] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" >
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-body text-sm">Dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
 </a>
-<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300">
+<a href="{% url "registros" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
 <span class="material-symbols-outlined" data-icon="person_add">group</span>
-<span class="font-body text-sm">Registrations</span>
+<span class="font-medium text-sm">Registrations</span>
 </a>
-<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300" href="#">
+<a href="{% url "create_refugee" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span class="font-medium text-sm">New Registration</span>
+</a>
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-body text-sm">Validação</span>
+<span class="font-medium text-sm">Validation</span>
 </a>
-<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-body text-sm">Security Logs</span>
-</a>
-<a class="text-on-surface-variant px-4 py-3 flex items-center gap-3 hover:bg-white/50 rounded-xl transition-all duration-300" href="#">
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-body text-sm">Settings</span>
+<span class="font-medium text-sm">Settings</span>
 </a>
 </nav>
-<div class="mt-auto pt-6 border-t border-slate-200/50 space-y-2">
-<button class="w-full bg-primary text-on-primary rounded-xl py-3 px-4 font-bold text-sm shadow-md hover:shadow-lg transition-all duration-300 mb-6 flex items-center justify-center gap-2" >
-<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
-                New Registration
-            </button>
-<a class="text-on-surface-variant px-4 py-2 flex items-center gap-3 hover:text-primary transition-colors text-sm" href="#">
+<div class="mt-auto pt-8 border-t border-slate-200/50 space-y-2">
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
-                Support
-            </a>
-<a class="text-on-surface-variant px-4 py-2 flex items-center gap-3 hover:text-error transition-colors text-sm" href="#">
+<span class="font-medium text-sm">Support</span>
+</a>
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="logout">logout</span>
-                Logout
-            </a>
+<span class="font-medium text-sm">Logout</span>
+</a>
 </div>
 </aside>
 <!-- Main Content Canvas -->
 <main class="flex-1 ml-72 min-h-screen">
-<!-- TopAppBar Component -->
-<header class="sticky top-0 z-40 bg-slate-50/80 backdrop-blur-xl flex justify-between items-center w-full px-10 py-4 border-b border-slate-200/20 shadow-sm h-16">
-<div class="flex items-center gap-8">
-<h2 class="font-headline font-bold text-lg tracking-tight text-on-surface">Sistema Seguro de Cadastro de Refugiados</h2>
-<div class="hidden md:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant/15">
-<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder:text-on-surface-variant/60" placeholder="Search records..." type="text"/>
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0 border-b border-slate-200/30 shadow-sm shadow-slate-200/90">
+<div class="flex items-center gap-6">
+<div class="relative flex items-center">
+<span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-64 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar registros..." type="text"/>
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<div class="h-8 w-[1px] bg-outline-variant/20 mx-2"></div>
-<div class="flex items-center gap-3">
-<div class="text-right">
-<p class="text-xs font-bold text-on-surface">Agente Administrativo</p>
-<p class="text-[10px] text-on-surface-variant">ID: 44290-X</p>
 </div>
-<div class="w-10 h-10 rounded-full border-2 border-primary/20 overflow-hidden">
-<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Professional portrait of a man in business casual attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1BD-_216fXmWGn1DCi1h9-VYhWIXJkEGruWi4D4MzQHkMSwlFQomyUhVCug4806WNTZcG9Ezdt2lLT56Ky2puK8L0AYpEqaj3DjHuJCgz1mel662QbePGl0S5qDcxvKrZrFo2I2P8WEBxCU74b4ZVu612PHTFLvNOoPMst0qVto4sat70oIaA_YtQaF7SnQRqz6XCszYxBqoW6JBzEKKZWafuDnbWsO1ZZnAFYDqyqvoK6SZRy4I2pL5dNEvJIAPTuynjZer9a4c"/>
-</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img alt="Avatar do Administrador" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNxTZXI4JJJSxYOwE1lM8QVyAls0te7sIsrjXFr4lOUYldTDKSylt5YMqTtJREjswYyKONHalyFzC3GIefIeYt2kMrH88pwPH6v6pfR6JSYHNL1Ofo4hsWmz00u50l_ZcpeDGCTcVqVO8agtNNlqyiXn6ynuvPMZY1GUlsOeQ57tJqtG2dYc4EzG036BVbbo9O3x8BxGhqkwqyAO5gPxPxYFnXjZ99uq6UgsW5jmYArBdeDupzK5v72d876P2xGlWS3vGiUBiH_Kg"/>
 </div>
 </div>
 </header>

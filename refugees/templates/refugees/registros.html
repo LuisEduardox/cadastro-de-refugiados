@@ -93,49 +93,49 @@
     </style>
 </head>
 <body class="bg-background text-on-background flex overflow-hidden">
-<!-- SideNavBar -->
-<aside class="hidden md:flex flex-col h-screen w-64 bg-slate-100/80 dark:bg-slate-900/80 sidebar-glass border-r border-slate-200/20 py-6 px-4 shrink-0">
-<div class="mb-8 px-2">
+<!-- SideNavBar Section -->
+<aside class="fixed h-screen w-72 left-0 top-0 bg-[#f1f4f6]/90 backdrop-blur-2xl dark:bg-slate-900/90 flex flex-col py-8 px-4 border-r border-slate-100 dark:border-slate-800 shadow-[12px_0_40px_rgba(43,52,55,0.04)] z-50">
+<div class="mb-10 px-4">
+<a href="{% url "dashboard" %}">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
-<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
-</div>
-<div>
-<h1 class="font-manrope text-lg font-bold text-slate-800 leading-tight">The Guardian Ledger</h1>
-<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-semibold">Sistema de Registro Seguro</p>
+<span class="material-symbols-outlined w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="flex flex-col">
+<span class="font-['Manrope'] font-black text-[#2b3437] dark:text-white uppercase tracking-widest text-xs">Guardian Ledger</span>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider opacity-70">Institutional Portal</p>
 </div>
 </div>
+</a>
 </div>
 <nav class="flex-1 space-y-2">
-<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl">
+<a href="{% url "dashboard" %}" class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" >
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-inter text-sm font-medium">Dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 bg-blue-100/50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-xl p-3 translate-x-1 transition-transform duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-<span class="font-inter text-sm font-medium">Registrations</span>
+<a class="bg-[#005EB8]/10 text-[#005EB8] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">group</span>
+<span class="font-medium text-sm">Registrations</span>
 </a>
-<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-<span class="font-inter text-sm font-medium">Documentação</span>
+<a href="{% url "create_refugee" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span class="font-medium text-sm">New Registration</span>
 </a>
-<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-inter text-sm font-medium">Validação</span>
+<span class="font-medium text-sm">Validation</span>
 </a>
-<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
-<span class="material-symbols-outlined" data-icon="history">history</span>
-<span class="font-inter text-sm font-medium">Histórico</span>
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-sm">Settings</span>
 </a>
 </nav>
-<div class="mt-auto space-y-2 border-t border-slate-200/20 pt-6">
-<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-<span class="font-inter text-sm font-medium">Suporte</span>
+<div class="mt-auto pt-8 border-t border-slate-200/50 space-y-2">
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-medium text-sm">Support</span>
 </a>
-<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span class="font-inter text-sm font-medium">Sair</span>
+<span class="font-medium text-sm">Logout</span>
 </a>
 <button class="w-full mt-4 bg-secondary-container text-on-secondary-container font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
 <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
@@ -144,30 +144,19 @@
 </div>
 </aside>
 <!-- Main Content Area -->
-<main class="flex-1 flex flex-col h-screen overflow-hidden">
+<main class="flex-1 flex flex-col h-screen overflow-hidden ml-72">
 <!-- TopNavBar -->
-<header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0">
+<header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0 border-b border-slate-200/30 shadow-sm shadow-slate-200/90">
 <div class="flex items-center gap-6">
 <div class="relative flex items-center">
 <span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
 <input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-64 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar registros..." type="text"/>
 </div>
-<nav class="hidden lg:flex gap-8">
-<a class="font-manrope font-bold tracking-tight text-slate-500 hover:text-blue-600">Visão Geral</a>
-<a class="font-manrope font-bold tracking-tight text-blue-700 border-b-2 border-blue-700 pb-1" href="#">Registros</a>
-<a class="font-manrope font-bold tracking-tight text-slate-500 hover:text-blue-600" href="#">Relatórios</a>
-</nav>
 </div>
 <div class="flex items-center gap-4">
-<a class="bg-primary hover:bg-primary-dim text-on-primary px-4 py-2 rounded-full font-bold text-sm shadow-sm active:scale-95 transition-all inline-block">
-                Novo Cadastro
-            </a>
 <div class="flex gap-2">
 <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
 </button>
 </div>
 <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
@@ -229,7 +218,7 @@
 <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold shrink-0">AA</div>
 <div class="truncate">
 <span class="block font-semibold text-on-surface truncate">{{ refugee.name }}</span>
-<span class="block text-xs text-on-surface-variant">ID: 442-9912</span>
+{% comment %} <span class="block text-xs text-on-surface-variant">ID: 442-9912</span> {% endcomment %}
 </div>
 </div>
 </td>
@@ -243,12 +232,12 @@
 <button class="p-2 hover:bg-primary-container hover:text-primary rounded-xl transition-all" title="Ver Detalhes">
 <span class="material-symbols-outlined text-lg">visibility</span>
 </button>
-<button class="p-2 hover:bg-secondary-container hover:text-secondary rounded-xl transition-all" title="Editar">
+<a href="{% url "update_refugee" refugee.pk %}" class="p-2 hover:bg-secondary-container hover:text-secondary rounded-xl transition-all" title="Editar">
 <span class="material-symbols-outlined text-lg">edit</span>
-</button>
-<button class="p-2 hover:bg-error-container/20 hover:text-error rounded-xl transition-all" title="Excluir">
+</a>
+<a href="{% url "delete_refugee" refugee.pk %}" class="p-2 hover:bg-error-container/20 hover:text-error rounded-xl transition-all" title="Excluir">
 <span class="material-symbols-outlined text-lg">delete</span>
-</button>
+</a>
 </div>
 </td>
 </tr>

@@ -1,15 +1,224 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
 
-{% block page_title %}
-    Deletar Registro
-{% endblock page_title %}
-
-{% block content %}
-    <h1>Deletar registro de refugiado</h1>
-    <p>Tem certeza que deseja excluir <strong>{{refugee.name}}</strong>?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Excluir</button>
-        <a href="{% url 'registros' %}">Cancelar</a>
-    </form>
-{% endblock content %}
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guardian Ledger - Excluir Registro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#255dad",
+                        "surface-container": "#eaeff1",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-fixed-variant": "#54536f",
+                        "outline-variant": "#abb3b7",
+                        "on-error": "#fff7f6",
+                        "on-primary-container": "#0f509f",
+                        "background": "#f8f9fa",
+                        "surface-container-high": "#e3e9ec",
+                        "secondary-dim": "#3d5762",
+                        "tertiary-dim": "#51516c",
+                        "tertiary": "#5d5c78",
+                        "surface-container-low": "#f1f4f6",
+                        "error": "#9f403d",
+                        "on-secondary-container": "#3c5561",
+                        "surface-variant": "#dbe4e7",
+                        "tertiary-fixed": "#d9d7f8",
+                        "on-surface-variant": "#586064",
+                        "surface": "#f8f9fa",
+                        "error-dim": "#4e0309",
+                        "surface-container-highest": "#dbe4e7",
+                        "on-error-container": "#752121",
+                        "tertiary-fixed-dim": "#cbc9e9",
+                        "secondary-fixed-dim": "#bdd9e6",
+                        "on-secondary-fixed-variant": "#455f6b",
+                        "primary-dim": "#1151a0",
+                        "on-tertiary-fixed": "#383751",
+                        "tertiary-container": "#d9d7f8",
+                        "on-primary-fixed-variant": "#215aaa",
+                        "secondary": "#49636f",
+                        "on-surface": "#2b3437",
+                        "secondary-container": "#cbe7f5",
+                        "on-background": "#2b3437",
+                        "inverse-on-surface": "#9b9d9e",
+                        "on-secondary": "#f2faff",
+                        "on-primary": "#f7f7ff",
+                        "surface-dim": "#d1dce0",
+                        "inverse-surface": "#0c0f10",
+                        "outline": "#737c7f",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#d7e2ff",
+                        "primary-fixed": "#d7e2ff",
+                        "on-tertiary": "#fbf7ff",
+                        "inverse-primary": "#73a3f8",
+                        "primary-fixed-dim": "#c1d5ff",
+                        "secondary-fixed": "#cbe7f5",
+                        "on-tertiary-container": "#4b4a65",
+                        "on-primary-fixed": "#003e81",
+                        "error-container": "#fe8983",
+                        "surface-tint": "#255dad",
+                        "on-secondary-fixed": "#29434e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar Section -->
+<aside class="fixed h-screen w-72 left-0 top-0 bg-[#f1f4f6]/90 backdrop-blur-2xl dark:bg-slate-900/90 flex flex-col py-8 px-4 border-r border-slate-100 dark:border-slate-800 shadow-[12px_0_40px_rgba(43,52,55,0.04)] z-50">
+<div class="mb-10 px-4">
+<a href="{% url "dashboard" %}">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div class="flex flex-col">
+<span class="font-['Manrope'] font-black text-[#2b3437] dark:text-white uppercase tracking-widest text-xs">Guardian Ledger</span>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-wider opacity-70">Institutional Portal</p>
+</div>
+</div>
+</a>
+</div>
+<nav class="flex-1 space-y-2">
+<a href="{% url "dashboard" %}" class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-sm">Dashboard</span>
+</a>
+<a href="{% url "registros" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">group</span>
+<span class="font-medium text-sm">Registrations</span>
+</a>
+<a href="{% url "create_refugee" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+<span class="font-medium text-sm">New Registration</span>
+</a>
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-medium text-sm">Validation</span>
+</a>
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-slate-200/50 space-y-2">
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-medium text-sm">Support</span>
+</a>
+<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium text-sm">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-72 min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0 border-b border-slate-200/30 shadow-sm shadow-slate-200/90">
+<div class="flex items-center gap-6">
+<div class="relative flex items-center">
+<span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-64 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar registros..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+<img alt="Avatar do Administrador" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNxTZXI4JJJSxYOwE1lM8QVyAls0te7sIsrjXFr4lOUYldTDKSylt5YMqTtJREjswYyKONHalyFzC3GIefIeYt2kMrH88pwPH6v6pfR6JSYHNL1Ofo4hsWmz00u50l_ZcpeDGCTcVqVO8agtNNlqyiXn6ynuvPMZY1GUlsOeQ57tJqtG2dYc4EzG036BVbbo9O3x8BxGhqkwqyAO5gPxPxYFnXjZ99uq6UgsW5jmYArBdeDupzK5v72d876P2xGlWS3vGiUBiH_Kg"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="p-12 max-w-4xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12">
+<h2 class="text-5xl font-extrabold text-on-surface tracking-tight leading-tight">Excluir Registro</h2>
+<p class="text-on-surface-variant text-lg mt-4 max-w-2xl leading-relaxed">
+                    Esta ação é irreversível. Todos os dados associados a este registro serão permanentemente removidos do sistema.
+                </p>
+</div>
+<!-- Confirmation Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(43,52,55,0.06)] border border-outline-variant/10">
+<!-- Warning Alert -->
+<div class="bg-error/10 border border-error/30 p-6 rounded-xl flex items-start gap-4 mb-8">
+<div class="w-12 h-12 rounded-full bg-error/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-error text-xl" data-icon="warning">warning</span>
+</div>
+<div>
+<h3 class="font-bold text-error text-lg mb-2">Ação Permanente</h3>
+<p class="text-on-surface-variant">Você está prestes a excluir o registro de <strong>{{ object.name }}</strong>. Esta operação não pode ser desfeita e removerá todos os dados relacionados de forma permanente.</p>
+</div>
+</div>
+<!-- Refugee Info Card -->
+<div class="bg-surface-container-low p-6 rounded-xl mb-8 border border-outline-variant/10">
+<h4 class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-4">Informações do Registro</h4>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<span class="block text-xs text-on-surface-variant font-bold mb-1">Nome Completo</span>
+<span class="block text-lg font-bold text-on-surface">{{ object.name }}</span>
+</div>
+<div>
+<span class="block text-xs text-on-surface-variant font-bold mb-1">Idade</span>
+<span class="block text-lg font-bold text-on-surface">{{ object.age }} anos</span>
+</div>
+<div>
+<span class="block text-xs text-on-surface-variant font-bold mb-1">Profissão</span>
+<span class="block text-lg font-bold text-on-surface">{{ object.profession|default:"Não informado" }}</span>
+</div>
+</div>
+</div>
+<!-- Confirmation Text -->
+<div class="mb-8">
+<p class="text-on-surface-variant text-sm leading-relaxed">
+Confirme que deseja prosseguir com a exclusão do registro de <strong class="text-on-surface">{{ object.name }}</strong>. Esta ação será registrada nos logs do sistema para fins de auditoria.
+</p>
+</div>
+<!-- Action Bar -->
+<form method="post" class="flex items-center justify-end gap-4 pt-6 border-t border-surface-container-high">
+{% csrf_token %}
+<a href="{% url 'registros' %}" class="px-8 py-3.5 rounded-xl font-semibold text-secondary hover:bg-surface-container-high transition-all inline-block text-center">
+                        Cancelar
+                    </a>
+<button class="bg-error text-on-error px-10 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-error/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2" type="submit">
+<span class="material-symbols-outlined" data-icon="delete_forever">delete_forever</span>
+                        Confirmar Exclusão
+                    </button>
+</form>
+</div>
+</div>
+<!-- Decorative Footer -->
+<footer class="p-10 text-center border-t border-slate-100 bg-surface-container-low/30">
+<p class="text-xs text-on-surface-variant font-medium tracking-widest uppercase opacity-50">
+                Institutional Ledger Registry v4.2.0 • Encryption Active • © 2024
+            </p>
+</footer>
+</main>
+</body></html>
