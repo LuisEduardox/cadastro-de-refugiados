@@ -120,8 +120,8 @@
 <span class="font-inter text-sm font-medium">Documentação</span>
 </a>
 <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
-<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
-<span class="font-inter text-sm font-medium">Biometria</span>
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="font-inter text-sm font-medium">Validação</span>
 </a>
 <a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-slate-200/50 transition-colors rounded-xl" href="#">
 <span class="material-symbols-outlined" data-icon="history">history</span>
@@ -220,6 +220,40 @@
 <th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right w-40">Ações</th>
 </tr>
 </thead>
+<tbody class="divide-y divide-outline-variant/10">
+{% for refugee in refugees_list %}
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-high/40 transition-colors group">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold shrink-0">AA</div>
+<div class="truncate">
+<span class="block font-semibold text-on-surface truncate">{{ refugee.name }}</span>
+<span class="block text-xs text-on-surface-variant">ID: 442-9912</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-5 text-on-surface-variant font-medium">{{ refugee.age }}</td>
+<td class="px-8 py-5">
+<span class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">{{ refugee.profession }}</span>
+</td>
+<td class="px-8 py-5 text-on-surface-variant truncate">{{ refugee.get_religion_display }}</td> {# não sei se essa informação sera disponibilizada #}
+<td class="px-8 py-5 text-right">
+<div class="flex justify-end gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-primary-container hover:text-primary rounded-xl transition-all" title="Ver Detalhes">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-2 hover:bg-secondary-container hover:text-secondary rounded-xl transition-all" title="Editar">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container/20 hover:text-error rounded-xl transition-all" title="Excluir">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+{% endfor %}
+</tbody>
 </table>
 </div>
 <!-- Pagination -->
@@ -244,9 +278,9 @@
 <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 rotate-12">verified_user</span>
 <div>
 <span class="text-sm font-bold opacity-80 uppercase tracking-widest">Segurança</span>
-<h3 class="text-2xl font-bold mt-1 leading-tight">Dados Criptografados</h3>
+<h3 class="text-2xl font-bold mt-1 leading-tight">Dados Protegidos</h3>
 </div>
-<p class="text-sm opacity-90">Todos os registros são protegidos por protocolo AES-256 e biometria obrigatória.</p>
+<p class="text-sm opacity-90">Todos os registros são protegidos por criptografia de ponta e validação de identidade segura.</p>
 </div>
 <div class="bg-surface-container-high rounded-3xl p-6 border border-outline-variant/20 flex flex-col justify-between min-h-[160px]">
 <div>
