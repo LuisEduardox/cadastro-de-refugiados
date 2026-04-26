@@ -115,10 +115,6 @@
 <span class="material-symbols-outlined" data-icon="person_add">group</span>
 <span class="font-medium text-sm">Registrations</span>
 </a>
-<a href="{% url "create_refugee" %}" class="text-[#586064] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300" >
-<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
-<span class="font-medium text-sm">New Registration</span>
-</a>
 <a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
 <span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
 <span class="font-medium text-sm">Validation</span>
@@ -137,10 +133,6 @@
 <span class="material-symbols-outlined" data-icon="logout">logout</span>
 <span class="font-medium text-sm">Logout</span>
 </a>
-<button class="w-full mt-4 bg-secondary-container text-on-secondary-container font-semibold py-3 rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
-<span>Exportar Dados</span>
-</button>
 </div>
 </aside>
 <!-- Main Content Area -->
@@ -166,135 +158,187 @@
 </header>
 <!-- Content Canvas -->
 <div class="flex-1 overflow-y-auto p-8">
-<div class="max-w-7xl mx-auto space-y-8">
-<!-- Editorial Header -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="max-w-5xl mx-auto space-y-8">
+
+{% if refugee %}
+
+<!-- Profile Header Card (Glassmorphism/Premium feel) -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-8 md:p-10 flex flex-col md:flex-row items-center md:items-start gap-8 relative overflow-hidden shadow-md">
+<!-- Decorative background blob -->
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary-container rounded-full mix-blend-multiply filter blur-3xl opacity-30 translate-x-1/3 -translate-y-1/2 pointer-events-none"></div>
+
+<!-- Avatar -->
+<div class="relative w-32 h-32 flex-shrink-0 z-10">
+<div class="w-full h-full rounded-full border-4 border-surface-container-lowest shadow-lg overflow-hidden bg-surface-variant">
+<div class="w-full h-full flex items-center justify-center text-5xl font-black text-primary/40 bg-gradient-to-br from-primary/10 to-secondary/10">
+{{ refugee.name|first|upper }}
+</div>
+</div>
+<div class="absolute bottom-0 right-0 w-8 h-8 bg-surface-container-lowest rounded-full flex items-center justify-center border-2 border-surface-variant shadow-md text-primary">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+</div>
+
+<!-- Profile Info -->
+<div class="flex-1 text-center md:text-left z-10">
+<!-- Status Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-label font-bold mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+Ativo no Sistema
+</div>
+
+<!-- Name -->
+<h2 class="text-3xl md:text-4xl font-headline font-black text-on-surface mb-2">{{ refugee.name }}</h2>
+<p class="text-on-surface-variant text-base mb-4 max-w-2xl">Cadastro ativo. Dados completos e verificados no sistema.</p>
+
+<!-- Info Badges -->
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-3">
+<div class="flex items-center gap-2 text-sm text-on-surface font-medium bg-surface-container-low px-3 py-1.5 rounded-lg border border-surface-variant">
+<span class="material-symbols-outlined text-primary text-base">person</span>
+{{ refugee.age }} anos
+</div>
+<div class="flex items-center gap-2 text-sm text-on-surface font-medium bg-surface-container-low px-3 py-1.5 rounded-lg border border-surface-variant">
+<span class="material-symbols-outlined text-secondary text-base">work</span>
+{{ refugee.profession }}
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bento Grid Information Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+<!-- Personal Info - Large -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 shadow-sm col-span-1 lg:col-span-2">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-primary-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Dados Pessoais</h3>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Nome -->
 <div>
-<h2 class="text-4xl font-extrabold text-on-surface tracking-tight leading-tight">Registros Oficiais</h2>
-<p class="text-on-surface-variant text-lg mt-2">Gerenciamento e monitoramento da população atendida no sistema.</p>
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-1">Nome Completo</p>
+<p class="text-base text-on-surface font-medium">{{ refugee.name }}</p>
 </div>
-<div class="flex gap-3">
-<div class="bg-surface-container-low px-4 py-2 rounded-xl flex items-center gap-3">
-<span class="text-primary material-symbols-outlined">analytics</span>
+
+<!-- Idade -->
 <div>
-<span class="block text-xs text-on-surface-variant font-bold uppercase tracking-wider">Total Ativo</span>
-<span class="block text-xl font-bold">12.482</span>
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-1">Idade</p>
+<p class="text-base text-on-surface font-medium">{{ refugee.age }} anos</p>
+</div>
+
+<!-- Educação -->
+<div>
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-1">Escolaridade</p>
+<p class="text-base text-on-surface font-medium">{{ refugee.get_education_level_display }}</p>
+</div>
+
+<!-- Profissão -->
+<div>
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-1">Profissão</p>
+<p class="text-base text-on-surface font-medium">{{ refugee.profession }}</p>
+</div>
+
+<!-- Endereço - Full -->
+<div class="sm:col-span-2">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-1">Endereço</p>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-outline text-sm mt-0.5">location_on</span>
+<p class="text-base text-on-surface">{{ refugee.address }}</p>
 </div>
 </div>
 </div>
 </div>
-<!-- Bento-style Data Grid -->
-<div class="bg-surface-container-lowest rounded-[2rem] shadow-[0_12px_40px_rgba(43,52,55,0.06)] overflow-hidden">
-<!-- Table Header Controls -->
-<div class="px-8 py-6 flex flex-wrap items-center justify-between gap-4 border-b border-outline-variant/10">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary">filter_list</span>
-<span class="text-sm font-semibold text-on-surface">Filtrar por: Nome, Profissão</span>
+
+<!-- Family & Financial - Sidebar -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 shadow-sm flex flex-col">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined">family_restroom</span>
 </div>
-<div class="flex gap-2">
-<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium hover:bg-surface-container-highest transition-colors">Hoje</button>
-<button class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-sm font-medium hover:bg-surface-container-highest transition-colors">Esta Semana</button>
-<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-full text-sm font-bold">Todos</button>
+<h3 class="font-headline font-bold text-lg text-on-surface">Família & Renda</h3>
 </div>
+
+<div class="space-y-6 flex-1">
+<!-- Filhos -->
+<div class="bg-surface-container-low p-4 rounded-lg border border-surface-variant">
+<div class="flex justify-between items-center mb-2">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider">Número de Filhos</p>
+<span class="material-symbols-outlined text-outline">child_care</span>
 </div>
-<!-- Modern Tonal Table -->
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse min-w-[800px]">
-<thead>
-<tr class="bg-surface-container-low/50">
-<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Nome</th>
-<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant w-24">Idade</th>
-<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Profissão</th>
-<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant">Religião</th>
-<th class="px-8 py-4 text-xs font-bold uppercase tracking-widest text-on-surface-variant text-right w-40">Ações</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-outline-variant/10">
-{% for refugee in refugees_list %}
-<!-- Row 1 -->
-<tr class="hover:bg-surface-container-high/40 transition-colors group">
-<td class="px-8 py-5">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary font-bold shrink-0">AA</div>
-<div class="truncate">
-<span class="block font-semibold text-on-surface truncate">{{ refugee.name }}</span>
-{% comment %} <span class="block text-xs text-on-surface-variant">ID: 442-9912</span> {% endcomment %}
+<p class="text-3xl font-headline font-black text-on-surface">{{ refugee.number_of_children }}</p>
+<p class="text-sm text-on-surface-variant mt-1">dependentes</p>
+</div>
+
+<!-- Renda -->
+<div class="bg-surface-container-low p-4 rounded-lg border border-surface-variant">
+<div class="flex justify-between items-center mb-2">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider">Renda Familiar</p>
+<span class="material-symbols-outlined text-outline">attach_money</span>
+</div>
+<p class="text-2xl font-headline font-black text-on-surface">R$ {{ refugee.family_income|floatformat:0 }}<span class="text-sm font-normal text-on-surface-variant">/mês</span></p>
+<p class="text-sm text-on-surface-variant mt-1">renda mensal estimada</p>
 </div>
 </div>
-</td>
-<td class="px-8 py-5 text-on-surface-variant font-medium">{{ refugee.age }}</td>
-<td class="px-8 py-5">
-<span class="bg-secondary-container/30 text-on-secondary-container px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">{{ refugee.profession }}</span>
-</td>
-<td class="px-8 py-5 text-on-surface-variant truncate">{{ refugee.get_religion_display }}</td> {# não sei se essa informação sera disponibilizada #}
-<td class="px-8 py-5 text-right">
-<div class="flex justify-end gap-1 opacity-60 group-hover:opacity-100 transition-opacity">
-<button class="p-2 hover:bg-primary-container hover:text-primary rounded-xl transition-all" title="Ver Detalhes">
-<span class="material-symbols-outlined text-lg">visibility</span>
-</button>
-<a href="{% url "update_refugee" refugee.pk %}" class="p-2 hover:bg-secondary-container hover:text-secondary rounded-xl transition-all" title="Editar">
-<span class="material-symbols-outlined text-lg">edit</span>
+</div>
+
+<!-- Religion & Politics - Full Width -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-variant p-6 shadow-sm col-span-1 md:col-span-2 lg:col-span-3">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-variant">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined">diversity_1</span>
+</div>
+<h3 class="font-headline font-bold text-lg text-on-surface">Religião & Política</h3>
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- Religião -->
+<div>
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-2">Religião</p>
+<p class="text-base text-on-surface font-medium">{{ refugee.get_religion_display }}</p>
+</div>
+
+<!-- Afiliação Política -->
+<div>
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider mb-2">Afiliação Política</p>
+<p class="text-base text-on-surface font-medium">{{ refugee.get_political_affiliation_display }}</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Action Buttons - Bottom Right -->
+<div class="flex gap-3 justify-end mt-8">
+<a href="{% url "update_refugee" refugee.pk %}" class="px-4 py-2 bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors rounded-lg font-label text-sm font-medium flex items-center gap-2 border border-outline-variant hover:border-outline">
+<span class="material-symbols-outlined text-sm">edit</span>
+Editar
 </a>
-<a href="{% url "delete_refugee" refugee.pk %}" class="p-2 hover:bg-error-container/20 hover:text-error rounded-xl transition-all" title="Excluir">
-<span class="material-symbols-outlined text-lg">delete</span>
+<a href="{% url "delete_refugee" refugee.pk %}" class="px-4 py-2 bg-error-container text-on-error-container hover:bg-error transition-colors rounded-lg font-label text-sm font-medium flex items-center gap-2 border border-error hover:border-error">
+<span class="material-symbols-outlined text-sm">delete</span>
+Deletar
 </a>
 </div>
-</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
+
+{% else %}
+<!-- Empty State -->
+<div class="flex flex-col items-center justify-center py-24">
+<div class="w-32 h-32 rounded-full bg-primary-container/20 flex items-center justify-center mb-6 shadow-lg">
+<span class="material-symbols-outlined text-8xl text-primary/40">person_add</span>
 </div>
-<!-- Pagination -->
-<div class="px-8 py-6 bg-surface-container-low/30 border-t border-outline-variant/10 flex items-center justify-between">
-<span class="text-sm text-on-surface-variant">Exibindo 1-4 de 12.482 registros</span>
-<div class="flex gap-2">
-<button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
-<button class="w-10 h-10 rounded-xl bg-primary text-on-primary font-bold">1</button>
-<button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">2</button>
-<button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">3</button>
-<button class="w-10 h-10 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
+<h2 class="text-3xl font-headline font-bold text-on-surface mb-3">Nenhum Refugiado Registrado</h2>
+<p class="text-on-surface-variant text-base mb-8 max-w-md text-center">Você ainda não possui um registro de refugiado. Crie um novo registro para começar a gerenciar suas informações.</p>
+<a href="{% url "create_refugee" %}" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-lg font-label font-bold hover:bg-primary-dim transition-colors shadow-md hover:shadow-lg">
+<span class="material-symbols-outlined">person_add</span>
+Criar Registro
+</a>
 </div>
-</div>
-</div>
-<!-- Footer Summary / Helper Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-primary rounded-3xl p-6 text-on-primary shadow-lg shadow-primary/20 flex flex-col justify-between min-h-[160px] relative overflow-hidden">
-<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 rotate-12">verified_user</span>
-<div>
-<span class="text-sm font-bold opacity-80 uppercase tracking-widest">Segurança</span>
-<h3 class="text-2xl font-bold mt-1 leading-tight">Dados Protegidos</h3>
-</div>
-<p class="text-sm opacity-90">Todos os registros são protegidos por criptografia de ponta e validação de identidade segura.</p>
-</div>
-<div class="bg-surface-container-high rounded-3xl p-6 border border-outline-variant/20 flex flex-col justify-between min-h-[160px]">
-<div>
-<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Suporte</span>
-<h3 class="text-2xl font-bold text-on-surface mt-1 leading-tight">Canal Humanitário</h3>
-</div>
-<div class="flex items-center gap-3">
-<div class="flex -space-x-2">
-<img alt="Support agent 1" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_dYwg4km9WOGF0onpgK-BKndesPA5e79okjPRdYYyfx9P10vP-5KtJ0mpymHLEJPyUe54xRITBo0NpF9CDJRypjrRE-zR46zNaTcmrYCb7H_wivgpGrGRcZQCi0upGk-nbFYoZE036H3rpOZINdXHbkB4DNnO7UpTyleovL_Z9mwxB9iXcueFzQPrs2khk1GPfnJFmGlvXur3B3EFq-r_j1ehrfmfbmmY2MWD2R75i-67HfEOT8m1WkmRZ_7zUIhHLsu0nGFk6iA"/>
-<img alt="Support agent 2" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUJbKfHl-97RYbNowPx2_21Lp4MNSqp7qfAkXB8iOQyWvsD-dxNYgrscV0Pr60LtLIQrUrvxI5yLouUO8KAWQiv3HKprWbAGQ26aWqG6PGz1bn_abo6M7hDmo7SBOlF9wU95uRvA7TUejq-Z8szODFtUZB0WG5Mb60kgoM8xH05E708Xj6JMULgub_dN6QvRPa7xac1-Nx0H2rQa0O7kXPo6SNERWyfSwsDbBIxVfs5jCOYj4gWhdH3jSD2-xb4H8JDig_Q0j2HqI"/>
-</div>
-<span class="text-xs font-semibold text-primary">Atendimento 24/7 disponível</span>
-</div>
-</div>
-<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/10 flex flex-col justify-between min-h-[160px]">
-<div>
-<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Atualizações</span>
-<h3 class="text-2xl font-bold text-on-surface mt-1 leading-tight">Último Backup</h3>
-</div>
-<div class="flex items-center justify-between">
-<span class="text-sm text-on-surface-variant font-medium">Hoje, às 04:00 AM</span>
-<span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-xs font-bold">Sucesso</span>
-</div>
-</div>
-</div>
+
+{% endif %}
+
 </div>
 </div>
 </main>
