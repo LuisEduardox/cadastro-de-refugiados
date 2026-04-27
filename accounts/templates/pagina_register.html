@@ -105,14 +105,14 @@
 <!-- Left Side: Visual/Branding Section -->
 <section class="hidden md:flex flex-col justify-between p-12 bg-primary relative overflow-hidden">
 <div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="high-tech secure digital network background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlNWc7PUPjNbI_9gSmc3Czlm1dXq3DYwaYHvf3SbZxoTDphSZ7RBGYgTiuo1oZmJ-xPCUoKiq9xxy19TslJE_Dl-Y-mxECfR05X8UrRIiooQ561Y112lawKEBwEZBdOf1_Fq7P3qN8SrzJDwm0xkhunXQhqnBI0xQfcOC7yKsyqSPZwr-aWXLOnjFl-lEgCOCbspO2gf8iBzOobsk03Z5xc95SwrdM1vn2e6tGT-jgEhiwziQzFJ1Lb2yVchNCYg0uXGH0NQuaIyQ"/>
+<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="high-tech secure digital network background" src="https://jpimg.com.br/uploads/2023/10/refugiados-gaza-1-750x450.jpg"/>
 </div>
 <div class="relative z-10">
 <div class="flex items-center gap-3 mb-16">
 <div class="w-10 h-10 bg-white/15 backdrop-blur-xl rounded-xl flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">security</span>
 </div>
-<span class="font-headline font-extrabold text-xl tracking-tight text-white">Haven Protocol</span>
+<span class="font-headline font-extrabold text-xl tracking-tight text-white">Refugees Protocol</span>
 </div>
 <h1 class="text-4xl lg:text-5xl font-headline font-bold text-white leading-[1.1] mb-6">
                     Faça parte da nossa Missão
@@ -123,12 +123,6 @@
 </div>
 <div class="relative z-10 mt-auto">
 <div class="flex items-center gap-4 text-white/70 text-sm">
-<div class="flex -space-x-2.5">
-<img class="h-8 w-8 rounded-full border-2 border-primary object-cover" data-alt="user portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQjeEz-2-yLM7CxVtVi_W3j2FVlz89NmasugsNic4uAxEoxVPn0kw1Tflj77kto_ZIE4cq-6w7JAgA4W-CTBGYa4mxumihDHKO0dyf9hcsYMoCi7zIBSltRKcTvKRl7I7cGk6LLAyz3UcCTsxB1psrcHmsRR6q7XES-XpRl-rG50798dueN4vuV0EOzgChmTrJpfL1CGNFJPvunvlYKwZFUxz8wp-SK_rdwNGocD5WC2pHEHpot9U_BJluUu07DQc0t6lIibSdnro"/>
-<img class="h-8 w-8 rounded-full border-2 border-primary object-cover" data-alt="user portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKHUkdrnd3oVPlIg8CtjjtvaM00fTRoWbTCm-3GYiX7mNzIq82DC8Xpsvt4aZcbUmKxsrCiMnfoY4x1XXif1VsG8JI4u09Osb0_fd8gkC53L1hZC_lv6edyswneW4LAXtkO3QOPCeDCijF42sZn9kcfmbCTaApyUjbzJpQDmsoGG_G1XoeIfcwXhCz20c_bKGALD6XLf6V-qFgzMzEYAR3LsjZtwgi8FXwDav6XwYjn-k3azFBdspIbJaEEty-qY5z3ZeTYZEkLvE"/>
-<div class="h-8 w-8 rounded-full border-2 border-primary bg-primary-dim flex items-center justify-center text-[10px] font-bold text-white">+12k</div>
-</div>
-<p class="font-medium">Utilizado globalmente por agências humanitárias.</p>
 </div>
 </div>
 </section>
@@ -142,11 +136,20 @@
 <h2 class="text-3xl font-headline font-bold text-on-surface tracking-tight mb-3">Criar nova conta</h2>
 <p class="text-on-surface-variant font-body">Insira seus dados para cadastro no sistema.</p>
 </div>
-<!-- Subtle Error/Info Box (Optional display based on context) -->
-<div class="mb-6 flex items-center gap-3 p-4 bg-error-container/40 border-l-4 border-error rounded-r-xl hidden" id="error-alert">
-<span class="material-symbols-outlined text-error text-xl" style="font-variation-settings: 'FILL' 1;">info</span>
-<p class="text-on-error-container text-sm font-medium">Erro ao realizar cadastro. Verifique os dados.</p>
-</div>
+<!-- Bloco de Mensagens de Erro/Sucesso (Django Messages) -->
+{% if messages %}
+    <div class="mb-8 space-y-3">
+        {% for message in messages %}
+            <div class="p-4 rounded-xl flex items-center gap-3 {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-200{% else %}bg-green-50 text-green-700 border border-green-200{% endif %} shadow-sm">
+                <span class="material-symbols-outlined text-xl">
+                    {% if message.tags == 'error' %}error{% else %}check_circle{% endif %}
+                </span>
+                <p class="text-sm font-semibold tracking-tight">{{ message }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
 <form action="{% url 'register' %}" method="POST" class="space-y-6">
     {% csrf_token %}
     <div>
@@ -166,7 +169,44 @@
             </div>
             <input class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="email" name="email" placeholder="exemplo@organizacao.org" required="" type="email"/>
         </div>
+        <div id="email-feedback" class="mt-2 hidden items-center gap-1.5 text-[11px] font-bold uppercase tracking-tight">
+            <span class="material-symbols-outlined text-[14px]" id="email-feedback-icon">circle</span>
+            <span id="email-feedback-text"></span>
+        </div>
     </div>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const emailFeedback = document.getElementById('email-feedback');
+        const emailFeedbackIcon = document.getElementById('email-feedback-icon');
+        const emailFeedbackText = document.getElementById('email-feedback-text');
+        const allowedDomains = [{% for d in allowed_domains %}"{{ d }}"{% if not forloop.last %},{% endif %}{% endfor %}];
+
+        emailInput.addEventListener('input', () => {
+            const parts = emailInput.value.split('@');
+            if (parts.length < 2 || parts[1] === '') {
+                emailFeedback.classList.add('hidden');
+                emailFeedback.classList.remove('flex');
+                return;
+            }
+            const domain = parts[1];
+            const valid = allowedDomains.includes(domain);
+            emailFeedback.classList.remove('hidden');
+            emailFeedback.classList.add('flex');
+            if (valid) {
+                emailFeedback.classList.replace('text-error', 'text-primary');
+                emailFeedback.classList.remove('text-error');
+                emailFeedback.classList.add('text-primary');
+                emailFeedbackIcon.textContent = 'check_circle';
+                emailFeedbackText.textContent = 'Domínio autorizado';
+            } else {
+                emailFeedback.classList.remove('text-primary');
+                emailFeedback.classList.add('text-error');
+                emailFeedbackIcon.textContent = 'cancel';
+                emailFeedbackText.textContent = `Domínio não autorizado. Use: ${allowedDomains.join(', ')}`;
+            }
+        });
+    </script>
     <div>
         <div class="flex justify-between items-center mb-2">
             <label class="block text-[13px] font-bold text-on-surface uppercase tracking-wider" for="password">Chave de Acesso</label>
@@ -176,11 +216,83 @@
                 <span class="material-symbols-outlined text-[20px]">lock</span>
             </div>
             <input class="block w-full pl-11 pr-12 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="password" name="password" placeholder="Crie uma senha forte" required="" type="password"/>
-            <button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-primary transition-colors" type="button">
-                <span class="material-symbols-outlined text-[20px]">visibility</span>
+            <button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-primary transition-colors" type="button" id="togglePassword">
+                <span class="material-symbols-outlined text-[20px]" id="passwordIcon">visibility</span>
             </button>
         </div>
+
+        <!-- Password Strength Meter -->
+        <div class="mt-3 space-y-3">
+            <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex gap-1">
+                <div id="bar-1" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
+                <div id="bar-2" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
+                <div id="bar-3" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
+                <div id="bar-4" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-2 text-[11px] font-bold uppercase tracking-tight">
+                <div id="req-length" class="flex items-center gap-1.5 text-outline/50">
+                    <span class="material-symbols-outlined text-[14px]">circle</span> 8+ Caracteres
+                </div>
+                <div id="req-upper" class="flex items-center gap-1.5 text-outline/50">
+                    <span class="material-symbols-outlined text-[14px]">circle</span> Letra Maiúscula
+                </div>
+                <div id="req-number" class="flex items-center gap-1.5 text-outline/50">
+                    <span class="material-symbols-outlined text-[14px]">circle</span> Um Número
+                </div>
+                <div id="req-special" class="flex items-center gap-1.5 text-outline/50">
+                    <span class="material-symbols-outlined text-[14px]">circle</span> Caractere Especial
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const toggleBtn = document.getElementById('togglePassword');
+        const icon = document.getElementById('passwordIcon');
+
+        // Toggle Visibility
+        toggleBtn.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            icon.textContent = type === 'password' ? 'visibility' : 'visibility_off';
+        });
+
+        // Real-time Validation Logic
+        passwordInput.addEventListener('input', () => {
+            const val = passwordInput.value;
+            const checks = {
+                length: val.length >= 8,
+                upper: /[A-Z]/.test(val),
+                number: /[0-9]/.test(val),
+                special: /[^A-Za-z0-9]/.test(val)
+            };
+
+            // Update Icons and Colors
+            Object.keys(checks).forEach(key => {
+                const el = document.getElementById(`req-${key}`);
+                const icon = el.querySelector('span');
+                if (checks[key]) {
+                    el.classList.replace('text-outline/50', 'text-primary');
+                    icon.textContent = 'check_circle';
+                } else {
+                    el.classList.replace('text-primary', 'text-outline/50');
+                    icon.textContent = 'circle';
+                }
+            });
+
+            // Update Strength Bar
+            const score = Object.values(checks).filter(Boolean).length;
+            const bars = ['bar-1', 'bar-2', 'bar-3', 'bar-4'];
+            const colors = ['bg-error', 'bg-orange-400', 'bg-yellow-400', 'bg-green-500'];
+
+            bars.forEach((id, idx) => {
+                const bar = document.getElementById(id);
+                bar.className = `h-full w-1/4 transition-all duration-500 ${idx < score ? colors[score-1] : 'bg-surface-container-highest'}`;
+            });
+        });
+    </script>
     <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-[0_8px_20px_rgba(0,94,184,0.25)] hover:bg-primary-hover hover:shadow-[0_10px_25px_rgba(0,94,184,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 no-underline">
         <span>Registrar no Sistema</span>
         <span class="material-symbols-outlined text-[20px]">app_registration</span>
@@ -195,12 +307,8 @@
 <!-- Security Badges -->
 <div class="mt-12 flex items-center justify-center gap-8 pt-8 border-t border-outline-variant/50">
 <div class="flex items-center gap-2 text-outline/70">
-<span class="material-symbols-outlined text-[18px]">verified_user</span>
-<span class="text-[11px] font-bold uppercase tracking-widest">SSL Encrypted</span>
 </div>
 <div class="flex items-center gap-2 text-outline/70">
-<span class="material-symbols-outlined text-[18px]">gpp_good</span>
-<span class="text-[11px] font-bold uppercase tracking-widest">ISO 27001</span>
 </div>
 </div>
 </div>
@@ -209,14 +317,8 @@
 <!-- Footer -->
 <footer class="fixed bottom-6 left-0 right-0 flex flex-col md:flex-row justify-center items-center gap-6 px-6 pointer-events-none">
 <div class="flex items-center gap-4 pointer-events-auto bg-white/80 backdrop-blur-md py-2.5 px-5 rounded-full border border-outline-variant shadow-sm">
-<button class="text-xs font-bold text-primary transition-colors">Português</button>
-<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
-<button class="text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors">English</button>
-<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
-<button class="text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors">Français</button>
-</div>
 <p class="text-[10px] text-on-surface-variant font-bold tracking-wider uppercase opacity-60">
-            © 2024 HAVEN PROTOCOL — COMPROMISSO COM A SEGURANÇA HUMANITÁRIA
+            © 2026 Refugees PROTOCOL — COMPROMISSO COM A SEGURANÇA HUMANITÁRIA
         </p>
 </footer>
 </body></html>
