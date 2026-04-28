@@ -95,14 +95,10 @@
             font-family: 'Inter', sans-serif;
         }
 
-        h1,
-        h2,
-        h3,
-        h4 {
+        h1, h2, h3, h4 {
             font-family: 'Manrope', sans-serif;
         }
 
-        /* Scroll reveal */
         .reveal {
             opacity: 0;
             transform: translateY(28px);
@@ -114,155 +110,59 @@
             transform: translateY(0);
         }
 
-        .reveal-d1 {
-            transition-delay: 0.1s;
-        }
+        .reveal-d1 { transition-delay: 0.1s; }
+        .reveal-d2 { transition-delay: 0.22s; }
+        .reveal-d3 { transition-delay: 0.34s; }
+        .reveal-d4 { transition-delay: 0.46s; }
 
-        .reveal-d2 {
-            transition-delay: 0.22s;
-        }
-
-        .reveal-d3 {
-            transition-delay: 0.34s;
-        }
-
-        .reveal-d4 {
-            transition-delay: 0.46s;
-        }
-
-        /* Hero animations */
         @keyframes fade-up {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes dot-pulse {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.25;
-            }
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.25; }
         }
 
         @keyframes ping-slow {
-            0% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-
-            80%,
-            100% {
-                transform: scale(1.6);
-                opacity: 0;
-            }
-        }
-
-        @keyframes progress-bar {
-            from {
-                width: 0%;
-            }
-
-            to {
-                width: 75%;
-            }
+            0%       { transform: scale(1); opacity: 0.5; }
+            80%, 100% { transform: scale(1.6); opacity: 0; }
         }
 
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-8px);
-            }
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-8px); }
         }
 
-        .anim-fade-up {
-            animation: fade-up 0.7s cubic-bezier(.4, 0, .2, 1) both;
-        }
+        .anim-fade-up   { animation: fade-up 0.7s cubic-bezier(.4,0,.2,1) both; }
+        .anim-fade-up-1 { animation: fade-up 0.7s cubic-bezier(.4,0,.2,1) 0.12s both; }
+        .anim-fade-up-2 { animation: fade-up 0.7s cubic-bezier(.4,0,.2,1) 0.24s both; }
+        .anim-fade-up-3 { animation: fade-up 0.7s cubic-bezier(.4,0,.2,1) 0.38s both; }
 
-        .anim-fade-up-1 {
-            animation: fade-up 0.7s cubic-bezier(.4, 0, .2, 1) 0.12s both;
-        }
+        .dot-pulse  { animation: dot-pulse 1.6s ease-in-out infinite; }
+        .ping-slow  { animation: ping-slow 2s ease-out infinite; }
+        .float-anim { animation: float 4s ease-in-out infinite; }
 
-        .anim-fade-up-2 {
-            animation: fade-up 0.7s cubic-bezier(.4, 0, .2, 1) 0.24s both;
-        }
-
-        .anim-fade-up-3 {
-            animation: fade-up 0.7s cubic-bezier(.4, 0, .2, 1) 0.38s both;
-        }
-
-        .anim-fade-up-4 {
-            animation: fade-up 0.7s cubic-bezier(.4, 0, .2, 1) 0.52s both;
-        }
-
-        .dot-pulse {
-            animation: dot-pulse 1.6s ease-in-out infinite;
-        }
-
-        .ping-slow {
-            animation: ping-slow 2s ease-out infinite;
-        }
-
-        .float-anim {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .progress-bar {
-            animation: progress-bar 1.6s cubic-bezier(.4, 0, .2, 1) 0.8s both;
-        }
-
-        /* Card effects */
         .card-lift {
-            transition: transform 0.28s cubic-bezier(.4, 0, .2, 1),
-                box-shadow 0.28s cubic-bezier(.4, 0, .2, 1),
-                border-color 0.28s ease;
+            transition: transform 0.28s cubic-bezier(.4,0,.2,1),
+                        box-shadow 0.28s cubic-bezier(.4,0,.2,1),
+                        border-color 0.28s ease;
         }
+        .card-lift:hover { transform: translateY(-6px); }
 
-        .card-lift:hover {
-            transform: translateY(-6px);
-        }
+        .navbar-scrolled { box-shadow: 0 4px 24px rgba(37,93,173,0.1); }
 
-        /* Navbar shadow on scroll */
-        .navbar-scrolled {
-            box-shadow: 0 4px 24px rgba(37, 93, 173, 0.1);
-        }
-
-        /* Hero grid texture */
         .hero-grid {
             background-image:
-                linear-gradient(rgba(37, 93, 173, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 93, 173, 0.035) 1px, transparent 1px);
+                linear-gradient(rgba(37,93,173,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37,93,173,0.035) 1px, transparent 1px);
             background-size: 52px 52px;
         }
 
-        /* Scrollbar style */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f4f6;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #abb3b7;
-            border-radius: 3px;
-        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f4f6; }
+        ::-webkit-scrollbar-thumb { background: #abb3b7; border-radius: 3px; }
     </style>
 </head>
 
@@ -272,10 +172,8 @@
     <header id="navbar"
         class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
         <div class="flex justify-between items-center px-6 py-3.5 max-w-7xl mx-auto">
-            <!-- Logo -->
             <a href="{% url 'home' %}" class="flex items-center gap-2.5 group">
-                <div
-                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-md shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-md shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
                     <span class="material-symbols-outlined text-white text-[18px]"
                         style="font-variation-settings:'FILL' 1,'wght' 600;">shield</span>
                 </div>
@@ -284,12 +182,11 @@
                 </span>
             </a>
 
-            <!-- Desktop nav -->
             <nav class="hidden md:flex items-center gap-1">
                 <a href="#features"
-                    class="px-4 py-2 rounded-lg text-primary text-sm font-semibold bg-primary-container/50 font-label">Features</a>
+                    class="px-4 py-2 rounded-lg text-primary text-sm font-semibold bg-primary-container/50 font-label">Recursos</a>
                 <a href="#security"
-                    class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-sm font-medium font-label">Security</a>
+                    class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-sm font-medium font-label">Segurança</a>
                 <a href="{% url 'registros' %}"
                     class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-sm font-medium font-label">Registros</a>
             </nav>
@@ -307,12 +204,11 @@
             </div>
         </div>
 
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 space-y-1">
             <a href="#features"
-                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-primary font-medium text-sm bg-primary-container/50">Features</a>
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-primary font-medium text-sm bg-primary-container/50">Recursos</a>
             <a href="#security"
-                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container text-sm transition-colors">Security</a>
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container text-sm transition-colors">Segurança</a>
             <a href="{% url 'registros' %}"
                 class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container text-sm transition-colors">Registros</a>
             <div class="pt-3 border-t border-slate-100 mt-2">
@@ -326,59 +222,39 @@
     </header>
 
     <main>
-        <!-- ── Hero ── full-screen, navbar flutuando sobre ela -->
+        <!-- ── Hero ── -->
         <section class="relative min-h-screen flex items-center overflow-hidden hero-grid">
-
-            <!-- Imagem de fundo cobrindo inclusive a área da navbar -->
             <div class="absolute inset-0 z-0">
-                <img class="w-full h-full object-cover opacity-[0.08] grayscale"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAREQgwAYDXKm41n6IzJbgE64PW0Wdr3Jt-PEcmkJRAHoML0UDOqO17s0RQIjRa8pkIAJJTO_ffkYFa1mqAl0LfxA5VprU3YQn9lSwwuXoU_0MWEipuIZz2N-o0SqI7djqLqGQxsEI9Daejnp5dfP3vgnTpSV8oTKYK2fLINULjUh0rHcf5sfhb_u0DC1XhGmNKji5zz9qzt0yHGjQDvy9NMg98EbxGDQJCD-cO7CvraVSiBH_9l_BL2oXQlwGDc2r91mR75fzTwg"
-                    alt="" />
-                <div class="absolute inset-0 bg-gradient-to-br from-surface via-surface/95 to-primary-container/25">
-                </div>
+                <div class="absolute inset-0 bg-gradient-to-br from-surface via-surface/95 to-primary-container/25"></div>
             </div>
+            <div class="absolute top-1/4 right-[6%] w-80 h-80 bg-primary/7 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 left-[2%] w-60 h-60 bg-secondary/8 rounded-full blur-3xl pointer-events-none"></div>
 
-            <!-- Blobs decorativos -->
-            <div class="absolute top-1/4 right-[6%] w-80 h-80 bg-primary/7 rounded-full blur-3xl pointer-events-none">
-            </div>
-            <div
-                class="absolute bottom-1/4 left-[2%] w-60 h-60 bg-secondary/8 rounded-full blur-3xl pointer-events-none">
-            </div>
-
-            <!-- Conteúdo — pt-24 para compensar a navbar fixa -->
-            <div
-                class="container max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-24 pb-16">
-
-                <!-- Texto -->
+            <div class="container max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-24 pb-16">
                 <div class="space-y-7">
-                    <div
-                        class="anim-fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-container border border-primary/20 text-on-primary-container text-xs font-bold uppercase tracking-wider shadow-sm">
+                    <div class="anim-fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-container border border-primary/20 text-on-primary-container text-xs font-bold uppercase tracking-wider shadow-sm">
                         <span class="w-2 h-2 bg-primary rounded-full dot-pulse"></span>
-                        <span class="material-symbols-outlined text-[14px]">verified_user</span>
-                        Soberania de Dados Garantida
+                        <span class="material-symbols-outlined text-[14px]">enhanced_encryption</span>
+                        Dados Protegidos com Criptografia de Campo
                     </div>
 
-                    <h1
-                        class="anim-fade-up-1 text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold text-on-surface leading-[1.08] tracking-tight">
+                    <h1 class="anim-fade-up-1 text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold text-on-surface leading-[1.08] tracking-tight">
                         Segurança e Integridade no Registro de
                         <span class="text-primary relative inline-block">
                             Refugiados
-                            <span
-                                class="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-primary/60 to-primary/10 rounded-full"></span>
+                            <span class="absolute -bottom-1 left-0 w-full h-[3px] bg-gradient-to-r from-primary/60 to-primary/10 rounded-full"></span>
                         </span>
                     </h1>
 
                     <p class="anim-fade-up-2 text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed">
-                        Uma plataforma institucional para cadastro, gestão e análise segura de dados humanitários —
-                        projetada para governos e agências globais.
+                        Plataforma de cadastro e gestão de dados humanitários com criptografia de campo, controle de acesso por papel e proteção contra senhas fracas.
                     </p>
 
                     <div class="anim-fade-up-3 flex flex-wrap gap-4 pt-1">
                         <a href="{% url 'dashboard' %}"
                             class="bg-primary text-white px-7 py-3.5 rounded-xl font-bold text-base hover:bg-primary-dim transition-all shadow-xl shadow-primary/25 active:scale-95 flex items-center gap-2 group">
                             Acessar Sistema
-                            <span
-                                class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
                         </a>
                         <a href="#features"
                             class="bg-white border-2 border-outline-variant text-on-surface-variant px-7 py-3.5 rounded-xl font-bold text-base hover:bg-surface-container hover:border-outline transition-all active:scale-95 flex items-center gap-2">
@@ -386,62 +262,63 @@
                             Ver Recursos
                         </a>
                     </div>
-
-                    <!-- Stats -->
-                    <div class="anim-fade-up-4 flex flex-wrap gap-6 pt-4 border-t border-outline-variant/35 mt-2">
-                        <div>
-                            <div class="text-2xl font-extrabold text-on-surface font-headline">150+</div>
-                            <div class="text-xs text-on-surface-variant font-medium uppercase tracking-wide mt-0.5">
-                                Países Suportados</div>
-                        </div>
-                        <div class="w-px bg-outline-variant/40 self-stretch"></div>
-                        <div>
-                            <div class="text-2xl font-extrabold text-on-surface font-headline">2M+</div>
-                            <div class="text-xs text-on-surface-variant font-medium uppercase tracking-wide mt-0.5">
-                                Registros Ativos</div>
-                        </div>
-                        <div class="w-px bg-outline-variant/40 self-stretch"></div>
-                        <div>
-                            <div class="text-2xl font-extrabold text-on-surface font-headline">99.9%</div>
-                            <div class="text-xs text-on-surface-variant font-medium uppercase tracking-wide mt-0.5">
-                                Uptime Garantido</div>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Imagem / Card visual -->
+                <!-- Card visual com dados reais do sistema -->
                 <div class="hidden lg:block relative float-anim">
                     <div class="absolute -inset-8 bg-primary/6 rounded-full blur-3xl pointer-events-none"></div>
-                    <div
-                        class="relative bg-white/55 backdrop-blur-xl border border-white/70 p-3 rounded-3xl shadow-2xl overflow-hidden aspect-[4/3] ring-1 ring-primary/10">
-                        <img class="w-full h-full object-cover rounded-2xl"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZyD4F_vuHcbIJTf7Nk_mP0KXwMPZXjQdZjdAHl5gCY8syXlUn2KnOXnwrNJXq0XABupdzfCsqdVbONS-NU7uFMkL2kRCeo0lOn4FkHc9CPl4v47v8LL0VCf18g4saw5oZLoluLt1R1Rfumy8MUNj8k0YaS6gdY2_0J_tdaTf_AIdh8H-wNiaIt0XnnlCpSgl6JSNHRkv1gWOnwfSyEUS72RzCO9m7zHIgRXAJyivny3TjyxT9Vq-bjSBQpIvUD32MqPn1KrRZa1Y"
-                            alt="Dashboard do sistema Guardian Ledger" />
-
-                        <!-- Badge flutuante: status -->
-                        <div
-                            class="absolute bottom-5 left-5 bg-white/95 backdrop-blur-sm border border-slate-100 rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-3">
-                            <div class="relative flex-shrink-0">
-                                <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                                <div class="absolute inset-0 w-3 h-3 bg-green-400 rounded-full ping-slow"></div>
+                    <div class="relative bg-white/80 backdrop-blur-xl border border-white/70 p-8 rounded-3xl shadow-2xl ring-1 ring-primary/10 space-y-5">
+                        <div class="flex items-center gap-3 border-b border-slate-100 pb-5">
+                            <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-md shadow-primary/30">
+                                <span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings:'FILL' 1;">shield</span>
                             </div>
                             <div>
-                                <div class="text-xs font-bold text-on-surface">Sistema Online</div>
-                                <div class="text-[10px] text-on-surface-variant">Todos os serviços operacionais</div>
+                                <div class="text-sm font-bold text-on-surface font-headline">Guardian Ledger</div>
+                                <div class="text-xs text-on-surface-variant">Proteções ativas</div>
+                            </div>
+                            <div class="ml-auto flex items-center gap-1.5">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                                <span class="text-xs text-on-surface-variant font-medium">Online</span>
                             </div>
                         </div>
-
-                        <!-- Badge flutuante: registros -->
-                        <div class="absolute top-5 right-5 bg-primary text-white rounded-2xl px-3.5 py-2 shadow-lg">
-                            <div class="text-base font-extrabold font-headline leading-none">2.4M</div>
-                            <div class="text-[9px] font-semibold opacity-80 uppercase tracking-wide mt-0.5">Registros
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 p-3 bg-primary-container/40 rounded-xl">
+                                <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings:'FILL' 1;">enhanced_encryption</span>
+                                <div>
+                                    <div class="text-xs font-bold text-on-surface">Criptografia AES-256</div>
+                                    <div class="text-[10px] text-on-surface-variant">9 campos por registro</div>
+                                </div>
+                                <span class="ml-auto text-[10px] font-bold text-primary bg-primary/10 px-2 py-1 rounded-full">Ativo</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-surface-container rounded-xl">
+                                <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">password</span>
+                                <div>
+                                    <div class="text-xs font-bold text-on-surface">Blacklist de Senhas</div>
+                                    <div class="text-[10px] text-on-surface-variant">~50 senhas bloqueadas</div>
+                                </div>
+                                <span class="ml-auto text-[10px] font-bold text-secondary bg-secondary/10 px-2 py-1 rounded-full">Ativo</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-surface-container rounded-xl">
+                                <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">domain_verification</span>
+                                <div>
+                                    <div class="text-xs font-bold text-on-surface">Whitelist de Domínios</div>
+                                    <div class="text-[10px] text-on-surface-variant">4 domínios permitidos</div>
+                                </div>
+                                <span class="ml-auto text-[10px] font-bold text-secondary bg-secondary/10 px-2 py-1 rounded-full">Ativo</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 bg-surface-container rounded-xl">
+                                <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">manage_accounts</span>
+                                <div>
+                                    <div class="text-xs font-bold text-on-surface">Controle de Acesso</div>
+                                    <div class="text-[10px] text-on-surface-variant">Admin / Usuário Padrão</div>
+                                </div>
+                                <span class="ml-auto text-[10px] font-bold text-secondary bg-secondary/10 px-2 py-1 rounded-full">Ativo</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Seta scroll down -->
             <a href="#features"
                 class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-on-surface-variant/50 hover:text-primary transition-colors group">
                 <span class="text-[10px] uppercase tracking-widest font-semibold">Saiba mais</span>
@@ -452,197 +329,123 @@
         <!-- ── Features ── -->
         <section id="features" class="py-28 bg-surface">
             <div class="container max-w-7xl mx-auto px-6">
-
                 <div class="mb-16 text-center reveal">
-                    <div
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-5">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-5">
                         <span class="material-symbols-outlined text-[14px]">hub</span>
                         O que oferecemos
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-4">Pilares da Plataforma</h2>
                     <p class="text-on-surface-variant max-w-xl mx-auto text-lg leading-relaxed">
-                        Recursos essenciais para a gestão segura, eficiente e rastreável de dados humanitários.
+                        Recursos implementados para a gestão segura e rastreável de dados humanitários.
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
 
                     <!-- Card 1: Criptografia (large) -->
-                    <div
-                        class="md:col-span-2 group card-lift relative bg-white border border-surface-container-high rounded-2xl p-8 hover:shadow-2xl hover:border-primary/25 overflow-hidden reveal">
-                        <!-- Borda colorida esquerda no hover -->
-                        <div
-                            class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary via-primary/60 to-transparent rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
+                    <div class="md:col-span-2 group card-lift relative bg-white border border-surface-container-high rounded-2xl p-8 hover:shadow-2xl hover:border-primary/25 overflow-hidden reveal">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary via-primary/60 to-transparent rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div class="relative z-10 flex flex-col h-full justify-between">
                             <div>
-                                <div
-                                    class="w-13 h-13 w-12 h-12 bg-primary-container text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                                    <span class="material-symbols-outlined text-3xl"
-                                        style="font-variation-settings:'FILL' 1;">lock</span>
+                                <div class="w-12 h-12 bg-primary-container text-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                                    <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">lock</span>
                                 </div>
                                 <h3 class="text-2xl font-bold mb-4 text-on-surface">Criptografia de Dados Sensíveis</h3>
                                 <p class="text-on-surface-variant leading-relaxed max-w-md">
-                                    Todos os dados pessoais de refugiados são protegidos com criptografia AES-256 em
-                                    repouso e TLS 1.3 em trânsito. Somente usuários autorizados acessam registros
-                                    específicos, garantindo conformidade com GDPR e LGPD.
+                                    Todos os dados pessoais dos refugiados — nome, endereço, idade, renda, religião, filiação política e outros — são armazenados com criptografia de campo individual usando AES-256 via <code class="text-xs bg-surface-container px-1.5 py-0.5 rounded font-mono">encrypted_model_fields</code>.
                                 </p>
                             </div>
                             <div class="mt-10 flex flex-wrap gap-3">
-                                <span
-                                    class="px-3 py-1.5 bg-primary-container rounded-full text-xs font-bold text-on-primary-container">AES-256</span>
-                                <span
-                                    class="px-3 py-1.5 bg-primary-container rounded-full text-xs font-bold text-on-primary-container">TLS
-                                    1.3</span>
-                                <span
-                                    class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-bold text-secondary">LGPD</span>
-                                <span
-                                    class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-bold text-secondary">GDPR</span>
+                                <span class="px-3 py-1.5 bg-primary-container rounded-full text-xs font-bold text-on-primary-container">AES-256</span>
+                                <span class="px-3 py-1.5 bg-primary-container rounded-full text-xs font-bold text-on-primary-container">9 Campos Criptografados</span>
+                                <span class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-bold text-secondary">Criptografia por Campo</span>
                             </div>
                         </div>
-                        <!-- Ícone decorativo de fundo -->
-                        <span
-                            class="material-symbols-outlined absolute right-[-5%] bottom-[-5%] text-[160px] text-primary/5 group-hover:text-primary/10 transition-colors duration-500 pointer-events-none select-none"
+                        <span class="material-symbols-outlined absolute right-[-5%] bottom-[-5%] text-[160px] text-primary/5 group-hover:text-primary/10 transition-colors duration-500 pointer-events-none select-none"
                             style="font-variation-settings:'FILL' 1;">lock</span>
                     </div>
 
                     <!-- Card 2: Cadastro de Refugiados -->
-                    <div
-                        class="group card-lift bg-primary text-on-primary rounded-2xl p-8 flex flex-col justify-between hover:shadow-2xl overflow-hidden relative reveal reveal-d1">
-                        <div
-                            class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none">
-                        </div>
-                        <div
-                            class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none">
-                        </div>
+                    <div class="group card-lift bg-primary text-on-primary rounded-2xl p-8 flex flex-col justify-between hover:shadow-2xl overflow-hidden relative reveal reveal-d1">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+                        <div class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
                         <div class="relative z-10">
-                            <div
-                                class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
-                                <span class="material-symbols-outlined text-3xl"
-                                    style="font-variation-settings:'FILL' 1;">person_add</span>
+                            <div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">person_add</span>
                             </div>
                             <h3 class="text-2xl font-bold mb-4">Cadastro de Refugiados</h3>
                             <p class="text-white/80 leading-relaxed text-sm">
-                                Formulários completos para registro de identidade, histórico migratório, situação
-                                familiar e documentação. Dados estruturados e rastreáveis desde o primeiro atendimento.
+                                Formulários completos para registro de identidade, situação familiar, renda, escolaridade e documentação. Dados estruturados e protegidos desde o primeiro atendimento.
                             </p>
                         </div>
                         <div class="mt-8 border-t border-white/10 pt-5 relative z-10">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <div class="text-2xl font-extrabold font-headline">2.4M+</div>
-                                    <div class="text-[10px] uppercase font-bold opacity-60 tracking-wider mt-0.5">
-                                        Cadastros Ativos</div>
-                                </div>
-                                <a href="{% url 'create_refugee' %}"
-                                    class="flex items-center gap-1 text-white/80 hover:text-white text-xs font-semibold transition-colors group/link">
-                                    Cadastrar
-                                    <span
-                                        class="material-symbols-outlined text-[14px] transition-transform group-hover/link:translate-x-1">arrow_forward</span>
-                                </a>
-                            </div>
+                            <a href="{% url 'create_refugee' %}"
+                                class="flex items-center gap-1 text-white/80 hover:text-white text-xs font-semibold transition-colors group/link">
+                                Cadastrar refugiado
+                                <span class="material-symbols-outlined text-[14px] transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+                            </a>
                         </div>
                     </div>
 
-                    <!-- Card 3: Estatísticas -->
-                    <div
-                        class="group card-lift bg-secondary text-on-secondary rounded-2xl p-8 flex flex-col justify-between hover:shadow-2xl overflow-hidden relative reveal reveal-d2">
-                        <div
-                            class="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none">
-                        </div>
+                    <!-- Card 3: Segurança de Senhas -->
+                    <div class="group card-lift bg-secondary text-on-secondary rounded-2xl p-8 flex flex-col justify-between hover:shadow-2xl overflow-hidden relative reveal reveal-d2">
+                        <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
                         <div class="relative z-10">
-                            <div
-                                class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
-                                <span class="material-symbols-outlined text-3xl"
-                                    style="font-variation-settings:'FILL' 1;">bar_chart</span>
+                            <div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">password</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-4">Estatísticas e Relatórios</h3>
+                            <h3 class="text-2xl font-bold mb-4">Segurança de Senhas</h3>
                             <p class="text-white/80 leading-relaxed text-sm">
-                                Dashboards em tempo real com indicadores de atendimento, distribuição geográfica e
-                                status de registros. Exporte relatórios para suporte a decisões institucionais.
+                                Blacklist personalizada de ~50 senhas comuns, validadores de comprimento mínimo, bloqueio de senhas puramente numéricas e verificação de similaridade com os dados do usuário.
                             </p>
                         </div>
-                        <div class="mt-8 relative z-10">
-                            <!-- Mini gráfico de barras decorativo -->
-                            <div class="flex items-end gap-1.5 h-10 mb-3">
-                                <div class="w-full bg-white/10 rounded-sm overflow-hidden flex items-end">
-                                    <div class="w-full bg-white/60 rounded-sm" style="height: 55%"></div>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-sm overflow-hidden flex items-end">
-                                    <div class="w-full bg-white/60 rounded-sm" style="height: 80%"></div>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-sm overflow-hidden flex items-end">
-                                    <div class="w-full bg-white/60 rounded-sm" style="height: 40%"></div>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-sm overflow-hidden flex items-end">
-                                    <div class="w-full bg-white/60 rounded-sm" style="height: 90%"></div>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-sm overflow-hidden flex items-end">
-                                    <div class="w-full bg-white rounded-sm" style="height: 65%"></div>
-                                </div>
+                        <div class="mt-8 relative z-10 space-y-2">
+                            <div class="flex items-center gap-2 text-white/70 text-xs font-medium">
+                                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">block</span>
+                                Blacklist de senhas comuns
                             </div>
-                            <div class="flex items-center gap-1.5">
-                                <span class="w-2 h-2 bg-green-400 rounded-full dot-pulse"></span>
-                                <span class="text-[10px] text-white/70 font-medium uppercase tracking-wide">Dados em
-                                    tempo real</span>
+                            <div class="flex items-center gap-2 text-white/70 text-xs font-medium">
+                                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                                Validadores do Django integrados
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 4: Escalabilidade (large) -->
-                    <div
-                        class="md:col-span-2 group card-lift bg-surface-container rounded-2xl p-8 border border-outline-variant/30 hover:border-primary/20 hover:shadow-xl flex flex-col md:flex-row gap-8 items-center justify-between overflow-hidden relative reveal reveal-d3">
-                        <div
-                            class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-tertiary via-tertiary/40 to-transparent rounded-r-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        </div>
+                    <!-- Card 4: Controle de Acesso (large) -->
+                    <div class="md:col-span-2 group card-lift bg-surface-container rounded-2xl p-8 border border-outline-variant/30 hover:border-primary/20 hover:shadow-xl flex flex-col md:flex-row gap-8 items-center justify-between overflow-hidden relative reveal reveal-d3">
+                        <div class="absolute top-0 right-0 w-1 h-full bg-gradient-to-b from-tertiary via-tertiary/40 to-transparent rounded-r-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div class="max-w-md relative z-10">
-                            <div
-                                class="w-12 h-12 bg-tertiary-container text-tertiary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-tertiary group-hover:text-white transition-all duration-300">
-                                <span class="material-symbols-outlined text-3xl"
-                                    style="font-variation-settings:'FILL' 1;">public</span>
+                            <div class="w-12 h-12 bg-tertiary-container text-tertiary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-tertiary group-hover:text-white transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl" style="font-variation-settings:'FILL' 1;">manage_accounts</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-3 text-on-surface">Escalabilidade Global</h3>
+                            <h3 class="text-2xl font-bold mb-3 text-on-surface">Controle de Acesso por Papel</h3>
                             <p class="text-on-surface-variant leading-relaxed">
-                                Arquitetura preparada para operar em situações de emergência de larga escala, suportando
-                                múltiplas organizações, regiões e idiomas com alta disponibilidade e desempenho
-                                consistente.
+                                O sistema diferencia administradores de usuários padrão. Administradores gerenciam todos os registros; usuários padrão acessam apenas o próprio cadastro. O soft delete garante que nenhum dado seja permanentemente apagado sem rastreabilidade.
                             </p>
                             <div class="flex flex-wrap gap-3 mt-6">
-                                <span
-                                    class="px-3 py-1.5 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Multi-região</span>
-                                <span
-                                    class="px-3 py-1.5 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Alta
-                                    disponibilidade</span>
-                                <span
-                                    class="px-3 py-1.5 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Offline-first</span>
+                                <span class="px-3 py-1.5 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Admin</span>
+                                <span class="px-3 py-1.5 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Usuário Padrão</span>
+                                <span class="px-3 py-1.5 bg-surface-container-high rounded-full text-xs font-bold text-on-surface-variant">Soft Delete</span>
                             </div>
                         </div>
-                        <!-- Grade visual decorativa -->
-                        <div class="flex-shrink-0 relative z-10">
-                            <div class="grid grid-cols-4 gap-2">
-                                <div
-                                    class="w-10 h-10 bg-primary/15 rounded-lg group-hover:bg-primary/25 transition-colors duration-300">
+                        <!-- Visual de papéis -->
+                        <div class="flex-shrink-0 relative z-10 flex flex-col gap-3">
+                            <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-5 py-4 shadow-sm">
+                                <div class="w-9 h-9 bg-primary rounded-full flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">admin_panel_settings</span>
                                 </div>
-                                <div
-                                    class="w-10 h-10 bg-primary/30 rounded-lg group-hover:bg-primary/40 transition-colors duration-300">
+                                <div>
+                                    <div class="text-xs font-bold text-on-surface">Administrador</div>
+                                    <div class="text-[10px] text-on-surface-variant">Acesso total aos registros</div>
                                 </div>
-                                <div
-                                    class="w-10 h-10 bg-primary/50 rounded-lg group-hover:bg-primary/60 transition-colors duration-300">
+                            </div>
+                            <div class="flex items-center gap-3 bg-white border border-slate-100 rounded-2xl px-5 py-4 shadow-sm">
+                                <div class="w-9 h-9 bg-secondary rounded-full flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white text-[18px]" style="font-variation-settings:'FILL' 1;">person</span>
                                 </div>
-                                <div
-                                    class="w-10 h-10 bg-primary/70 rounded-lg group-hover:bg-primary/80 transition-colors duration-300">
-                                </div>
-                                <div
-                                    class="w-10 h-10 bg-primary/25 rounded-lg group-hover:bg-primary/35 transition-colors duration-300">
-                                </div>
-                                <div
-                                    class="w-10 h-10 bg-primary/45 rounded-lg group-hover:bg-primary/55 transition-colors duration-300">
-                                </div>
-                                <div
-                                    class="w-10 h-10 bg-primary/65 rounded-lg group-hover:bg-primary/75 transition-colors duration-300">
-                                </div>
-                                <div
-                                    class="w-10 h-10 bg-primary rounded-lg shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform duration-300">
+                                <div>
+                                    <div class="text-xs font-bold text-on-surface">Usuário Padrão</div>
+                                    <div class="text-[10px] text-on-surface-variant">Acesso ao próprio cadastro</div>
                                 </div>
                             </div>
                         </div>
@@ -653,125 +456,101 @@
 
         <!-- ── Security ── -->
         <section id="security" class="py-28 relative overflow-hidden bg-white">
-            <div
-                class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-container/15 to-transparent pointer-events-none">
-            </div>
-            <div
-                class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none">
-            </div>
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary-container/15 to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none"></div>
 
             <div class="container max-w-7xl mx-auto px-6">
                 <div class="flex flex-col lg:flex-row items-center gap-20">
                     <!-- Texto -->
                     <div class="lg:w-1/2 reveal">
-                        <div
-                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold uppercase tracking-wider mb-6">
                             <span class="material-symbols-outlined text-[14px]">security</span>
-                            Conformidade Internacional
+                            Proteções Implementadas
                         </div>
                         <h2 class="text-3xl md:text-5xl font-extrabold text-on-surface mb-6 leading-tight">
-                            Segurança em Nível <span class="text-primary">Institucional</span>
+                            Segurança em <span class="text-primary">Múltiplas Camadas</span>
                         </h2>
                         <p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
-                            O Guardian Ledger opera sob os mais altos padrões de conformidade internacional, garantindo
-                            que o processamento de dados humanitários respeite as soberanias nacionais e os direitos
-                            humanos fundamentais.
+                            O Guardian Ledger combina criptografia de campo, validação rigorosa de credenciais e controle de acesso granular para proteger os dados sensíveis dos refugiados cadastrados.
                         </p>
                         <div class="space-y-3">
-                            <div
-                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
-                                <div
-                                    class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                                    <span
-                                        class="material-symbols-outlined text-secondary group-hover:text-white transition-colors"
-                                        style="font-variation-settings:'FILL' 1;">verified</span>
+                            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
+                                <div class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                    <span class="material-symbols-outlined text-secondary group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">enhanced_encryption</span>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-base text-on-surface">ISO/IEC 27001</h4>
-                                    <p class="text-on-surface-variant text-sm mt-0.5">Certificação de sistema de gestão
-                                        de segurança da informação.</p>
+                                    <h4 class="font-bold text-base text-on-surface">Criptografia de Campo AES-256</h4>
+                                    <p class="text-on-surface-variant text-sm mt-0.5">9 campos por registro criptografados individualmente em repouso no banco de dados.</p>
                                 </div>
                             </div>
-                            <div
-                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
-                                <div
-                                    class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                                    <span
-                                        class="material-symbols-outlined text-secondary group-hover:text-white transition-colors"
-                                        style="font-variation-settings:'FILL' 1;">lock</span>
+                            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
+                                <div class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                    <span class="material-symbols-outlined text-secondary group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">password</span>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-base text-on-surface">AES-256 bit</h4>
-                                    <p class="text-on-surface-variant text-sm mt-0.5">Criptografia de disco e tráfego
-                                        para proteção contra acessos não autorizados.</p>
+                                    <h4 class="font-bold text-base text-on-surface">Blacklist e Validação de Senhas</h4>
+                                    <p class="text-on-surface-variant text-sm mt-0.5">Blacklist personalizada + validadores do Django: comprimento mínimo, não-numérica, não-similar ao usuário.</p>
                                 </div>
                             </div>
-                            <div
-                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
-                                <div
-                                    class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
-                                    <span
-                                        class="material-symbols-outlined text-secondary group-hover:text-white transition-colors"
-                                        style="font-variation-settings:'FILL' 1;">gavel</span>
+                            <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
+                                <div class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                    <span class="material-symbols-outlined text-secondary group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">domain_verification</span>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-base text-on-surface">GDPR &amp; LGPD Compliance</h4>
-                                    <p class="text-on-surface-variant text-sm mt-0.5">Estrutura preparada para as mais
-                                        rígidas leis de proteção de dados vigentes.</p>
+                                    <h4 class="font-bold text-base text-on-surface">Whitelist de Domínios de E-mail</h4>
+                                    <p class="text-on-surface-variant text-sm mt-0.5">Apenas domínios pré-aprovados são aceitos: @gmail.com, @hotmail.com, @yahoo.com, @academico.ifpb.edu.br.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Widget de confiança -->
+                    <!-- Cards de proteções reais -->
                     <div class="lg:w-1/2 reveal reveal-d2">
-                        <div
-                            class="aspect-square bg-gradient-to-br from-slate-50 to-primary-container/20 rounded-[2.5rem] border border-slate-100 flex items-center justify-center p-10 overflow-hidden shadow-2xl">
-                            <div
-                                class="relative w-full h-full flex flex-col items-center justify-center text-center space-y-5">
-                                <!-- Anéis animados -->
-                                <div class="relative flex items-center justify-center">
-                                    <div class="absolute w-40 h-40 bg-primary/10 rounded-full ping-slow"></div>
-                                    <div class="absolute w-32 h-32 bg-primary/15 rounded-full ping-slow"
-                                        style="animation-delay: 0.7s"></div>
-                                    <div
-                                        class="w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white shadow-2xl shadow-primary/40 relative z-10">
-                                        <span class="material-symbols-outlined text-5xl"
-                                            style="font-variation-settings:'FILL' 1;">policy</span>
-                                    </div>
+                        <div class="bg-gradient-to-br from-slate-50 to-primary-container/20 rounded-[2.5rem] border border-slate-100 p-10 shadow-2xl space-y-4">
+                            <h3 class="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-6">Proteções Ativas</h3>
+
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings:'FILL' 1;">enhanced_encryption</span>
                                 </div>
-                                <div>
-                                    <span class="text-3xl font-black text-primary block tracking-tight">TRUSTED</span>
-                                    <span
-                                        class="text-on-surface-variant font-medium tracking-widest uppercase text-xs">Verified
-                                        Governance</span>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-on-surface">Criptografia AES-256</div>
+                                    <div class="text-xs text-on-surface-variant">9 campos criptografados por registro</div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-3 w-full pt-4">
-                                    <div
-                                        class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                                        <div class="text-2xl font-bold text-secondary font-headline">99.9%</div>
-                                        <div
-                                            class="text-[10px] text-on-surface-variant uppercase font-bold mt-1 tracking-wide">
-                                            Uptime</div>
-                                    </div>
-                                    <div
-                                        class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-                                        <div class="text-2xl font-bold text-secondary font-headline">24/7</div>
-                                        <div
-                                            class="text-[10px] text-on-surface-variant uppercase font-bold mt-1 tracking-wide">
-                                            Monitoramento</div>
-                                    </div>
-                                    <div
-                                        class="col-span-2 bg-white border border-slate-100 p-3.5 rounded-2xl shadow-sm flex items-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all">
-                                        <span class="material-symbols-outlined text-green-500"
-                                            style="font-variation-settings:'FILL' 1;">check_circle</span>
-                                        <span class="text-sm font-semibold text-on-surface">Auditoria Contínua
-                                            Ativa</span>
-                                    </div>
-                                </div>
+                                <span class="material-symbols-outlined text-green-500 text-[20px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
                             </div>
-                            <div
-                                class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_35%,_white_80%)] pointer-events-none">
+
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">shield_lock</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-on-surface">Proteção CSRF + Sessão Segura</div>
+                                    <div class="text-xs text-on-surface-variant">Cookies seguros com expiração automática</div>
+                                </div>
+                                <span class="material-symbols-outlined text-green-500 text-[20px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                            </div>
+
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">delete_sweep</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-on-surface">Exclusão Lógica (Soft Delete)</div>
+                                    <div class="text-xs text-on-surface-variant">Registros preservados com campo <code class="font-mono text-[10px]">deleted_at</code></div>
+                                </div>
+                                <span class="material-symbols-outlined text-green-500 text-[20px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                            </div>
+
+                            <div class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                <div class="w-10 h-10 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings:'FILL' 1;">manage_accounts</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-sm font-bold text-on-surface">Autenticação por E-mail + Roles</div>
+                                    <div class="text-xs text-on-surface-variant">Controle de acesso Admin / Usuário Padrão</div>
+                                </div>
+                                <span class="material-symbols-outlined text-green-500 text-[20px]" style="font-variation-settings:'FILL' 1;">check_circle</span>
                             </div>
                         </div>
                     </div>
@@ -783,32 +562,23 @@
         <section class="py-24 bg-surface">
             <div class="container max-w-5xl mx-auto px-6">
                 <div class="bg-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden reveal">
-                    <!-- Decorações -->
-                    <div
-                        class="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-56 h-56 bg-white/5 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none">
-                    </div>
-                    <span
-                        class="material-symbols-outlined absolute top-6 left-8 text-[80px] text-white/5 pointer-events-none select-none"
+                    <div class="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 w-56 h-56 bg-white/5 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+                    <span class="material-symbols-outlined absolute top-6 left-8 text-[80px] text-white/5 pointer-events-none select-none"
                         style="font-variation-settings:'FILL' 1;">lock</span>
-                    <span
-                        class="material-symbols-outlined absolute bottom-6 right-8 text-[110px] text-white/5 pointer-events-none select-none"
+                    <span class="material-symbols-outlined absolute bottom-6 right-8 text-[110px] text-white/5 pointer-events-none select-none"
                         style="font-variation-settings:'FILL' 1;">shield</span>
 
                     <div class="relative z-10">
-                        <div
-                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/20 text-white/90 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/20 text-white/90 text-xs font-bold uppercase tracking-wider mb-6">
                             <span class="w-2 h-2 bg-white rounded-full dot-pulse"></span>
-                            Pronto para começar
+                            Acesso disponível
                         </div>
                         <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                            Modernize sua gestão<br class="hidden md:block" /> humanitária hoje
+                            Gerencie registros<br class="hidden md:block" /> com segurança
                         </h2>
                         <p class="text-white/75 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Cadastre, gerencie e analise dados de refugiados com segurança e eficiência — em uma única
-                            plataforma institucional.
+                            Cadastre, gerencie e consulte dados de refugiados com criptografia de campo e controle de acesso em uma única plataforma.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="{% url 'login' %}"
@@ -838,56 +608,33 @@
                             <span class="material-symbols-outlined text-white text-[16px]"
                                 style="font-variation-settings:'FILL' 1;">shield</span>
                         </div>
-                        <span class="font-bold text-slate-900 font-headline">Guardian <span
-                                class="text-primary">Ledger</span></span>
+                        <span class="font-bold text-slate-900 font-headline">Guardian <span class="text-primary">Ledger</span></span>
                     </div>
-                    <p class="text-sm text-slate-500 leading-relaxed">Plataforma institucional de cadastro e gestão
-                        segura de refugiados para governos e agências globais.</p>
+                    <p class="text-sm text-slate-500 leading-relaxed">Plataforma de cadastro e gestão segura de refugiados com criptografia de campo e controle de acesso.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-10 sm:gap-16">
                     <div>
                         <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Plataforma</h5>
                         <ul class="space-y-2.5">
-                            <li><a href="#features"
-                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Recursos</a>
-                            </li>
-                            <li><a href="#security"
-                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Segurança</a>
-                            </li>
-                            <li><a href="{% url 'registros' %}"
-                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Registros</a>
-                            </li>
-                            <li><a href="{% url 'login' %}"
-                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Entrar</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Legal</h5>
-                        <ul class="space-y-2.5">
-                            <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors">Termos
-                                    de Uso</a></li>
-                            <li><a href="#"
-                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Privacidade</a>
-                            </li>
-                            <li><a href="#"
-                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Suporte</a></li>
+                            <li><a href="#features" class="text-sm text-slate-500 hover:text-primary transition-colors">Recursos</a></li>
+                            <li><a href="#security" class="text-sm text-slate-500 hover:text-primary transition-colors">Segurança</a></li>
+                            <li><a href="{% url 'registros' %}" class="text-sm text-slate-500 hover:text-primary transition-colors">Registros</a></li>
+                            <li><a href="{% url 'login' %}" class="text-sm text-slate-500 hover:text-primary transition-colors">Entrar</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="border-t border-slate-200 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-                <p class="text-xs text-slate-400">© 2025 Guardian Ledger. Institutional Refugee Registration Systems.
-                </p>
+                <p class="text-xs text-slate-400">© 2025 Guardian Ledger. Sistema de Cadastro de Refugiados.</p>
                 <div class="flex items-center gap-1.5">
                     <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                    <span class="text-xs text-slate-400 font-medium">Todos os sistemas operacionais</span>
+                    <span class="text-xs text-slate-400 font-medium">Sistema operacional</span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(el => {
                 if (el.isIntersecting) {
@@ -898,13 +645,11 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Navbar sombra no scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('navbar-scrolled', window.scrollY > 30);
         }, { passive: true });
 
-        // Menu mobile
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
