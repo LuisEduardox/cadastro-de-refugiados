@@ -267,38 +267,94 @@
 </head>
 
 <body class="bg-background text-on-background antialiased overflow-x-hidden">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
-<div class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100 font-headline">
-                Guardian Ledger
+
+    <!-- ── Navbar ── -->
+    <header id="navbar"
+        class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="flex justify-between items-center px-6 py-3.5 max-w-7xl mx-auto">
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="flex items-center gap-2.5 group">
+                <div
+                    class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-md shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
+                    <span class="material-symbols-outlined text-white text-[18px]"
+                        style="font-variation-settings:'FILL' 1,'wght' 600;">shield</span>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-on-surface font-headline">
+                    Guardian <span class="text-primary">Ledger</span>
+                </span>
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-1">
+                <a href="#features"
+                    class="px-4 py-2 rounded-lg text-primary text-sm font-semibold bg-primary-container/50 font-label">Features</a>
+                <a href="#security"
+                    class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-sm font-medium font-label">Security</a>
+                <a href="{% url 'registros' %}"
+                    class="px-4 py-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors text-sm font-medium font-label">Registros</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="{% url 'login' %}"
+                    class="hidden md:inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dim text-white px-5 py-2 rounded-lg font-semibold text-sm transition-all active:scale-95 shadow-md shadow-primary/25">
+                    <span class="material-symbols-outlined text-[16px]">login</span>
+                    Entrar
+                </a>
+                <button id="menu-btn"
+                    class="md:hidden p-2 rounded-lg hover:bg-surface-container text-on-surface-variant transition-colors">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 dark:border-blue-300 pb-1 font-label text-sm font-medium" href="#">Features</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-label text-sm font-medium" href="#">Security</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors font-label text-sm font-medium" href="#">About</a>
-</nav>
-<div class="flex items-center gap-4">
-<a href="{% url "login" %}" class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded font-medium text-sm transition-all active:scale-95 duration-150 shadow-md">
-                    Login
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white px-6 py-4 space-y-1">
+            <a href="#features"
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-primary font-medium text-sm bg-primary-container/50">Features</a>
+            <a href="#security"
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container text-sm transition-colors">Security</a>
+            <a href="{% url 'registros' %}"
+                class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container text-sm transition-colors">Registros</a>
+            <div class="pt-3 border-t border-slate-100 mt-2">
+                <a href="{% url 'login' %}"
+                    class="flex items-center justify-center gap-2 bg-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm w-full">
+                    <span class="material-symbols-outlined text-[16px]">login</span>
+                    Entrar
                 </a>
-<a href="{% url "register" %}" class="bg-primary hover:bg-primary-dim text-white px-6 py-2 rounded font-medium text-sm transition-all active:scale-95 duration-150 shadow-md">
-                    Registro
-                </a>
-</div>
-</div>
-</header>
-<main class="pt-20">
-<!-- Hero Section -->
-<section class="relative min-h-[921px] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-10 grayscale-[0.5]" data-alt="Abstract global digital network connections with soft blue glowing lines on a dark background representing high-tech security and connectivity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAREQgwAYDXKm41n6IzJbgE64PW0Wdr3Jt-PEcmkJRAHoML0UDOqO17s0RQIjRa8pkIAJJTO_ffkYFa1mqAl0LfxA5VprU3YQn9lSwwuXoU_0MWEipuIZz2N-o0SqI7djqLqGQxsEI9Daejnp5dfP3vgnTpSV8oTKYK2fLINULjUh0rHcf5sfhb_u0DC1XhGmNKji5zz9qzt0yHGjQDvy9NMg98EbxGDQJCD-cO7CvraVSiBH_9l_BL2oXQlwGDc2r91mR75fzTwg"/>
-<div class="absolute inset-0 bg-gradient-to-tr from-surface via-surface/90 to-primary-container/20"></div>
-</div>
-<div class="container max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-xs font-semibold uppercase tracking-wider">
-<span class="material-symbols-outlined text-[14px]">verified_user</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ── Hero ── full-screen, navbar flutuando sobre ela -->
+        <section class="relative min-h-screen flex items-center overflow-hidden hero-grid">
+
+            <!-- Imagem de fundo cobrindo inclusive a área da navbar -->
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-[0.08] grayscale"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAREQgwAYDXKm41n6IzJbgE64PW0Wdr3Jt-PEcmkJRAHoML0UDOqO17s0RQIjRa8pkIAJJTO_ffkYFa1mqAl0LfxA5VprU3YQn9lSwwuXoU_0MWEipuIZz2N-o0SqI7djqLqGQxsEI9Daejnp5dfP3vgnTpSV8oTKYK2fLINULjUh0rHcf5sfhb_u0DC1XhGmNKji5zz9qzt0yHGjQDvy9NMg98EbxGDQJCD-cO7CvraVSiBH_9l_BL2oXQlwGDc2r91mR75fzTwg"
+                    alt="" />
+                <div class="absolute inset-0 bg-gradient-to-br from-surface via-surface/95 to-primary-container/25">
+                </div>
+            </div>
+
+            <!-- Blobs decorativos -->
+            <div class="absolute top-1/4 right-[6%] w-80 h-80 bg-primary/7 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-1/4 left-[2%] w-60 h-60 bg-secondary/8 rounded-full blur-3xl pointer-events-none">
+            </div>
+
+            <!-- Conteúdo — pt-24 para compensar a navbar fixa -->
+            <div
+                class="container max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center pt-24 pb-16">
+
+                <!-- Texto -->
+                <div class="space-y-7">
+                    <div
+                        class="anim-fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-container border border-primary/20 text-on-primary-container text-xs font-bold uppercase tracking-wider shadow-sm">
+                        <span class="w-2 h-2 bg-primary rounded-full dot-pulse"></span>
+                        <span class="material-symbols-outlined text-[14px]">verified_user</span>
                         Soberania de Dados Garantida
                     </div>
 
@@ -431,23 +487,44 @@
                                     repouso e TLS 1.3 em trânsito. Somente usuários autorizados acessam registros
                                     específicos, garantindo conformidade com GDPR e LGPD.
                                 </p>
-</div>
-<div class="mt-12 flex gap-4">
-<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-secondary">Criptografia de Ponta</span>
-<span class="px-3 py-1 bg-surface-container rounded-full text-xs font-semibold text-secondary">End-to-End</span>
-</div>
-</div>
-<img class="absolute right-[-10%] bottom-[-10%] w-2/3 h-2/3 object-contain opacity-10 group-hover:opacity-20 transition-opacity" data-alt="Close up of futuristic glowing digital server hardware in a dark room with blue and white light trails representing data flow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9jd--hL_IRh4_VCbuWlgIYQBefeD9gTEHKay1idadya6_LF-ZKihf6bFinRlzphwXg2WBt4t6beKrGTNpf-ERtd9t0f3iq6y76EqkfXDXAbI9P4hD_eVC9aRWALVAf2vRvKQzJO-WoAafAauyvlaDCam0NbWsvvt8bTLSbJ89n-MRwidx0c-aGVmLawPUyBEDtUPrNXk1Wyt2mFF-DpZvj88fjDfbAldibGbeyzwjij9deaKHLov3QuMKKkYoeceShzSAUr2BJdg"/>
-</div>
-<!-- Feature 2 -->
-<div class="bg-primary text-on-primary rounded-2xl p-8 flex flex-col justify-between hover:shadow-xl transition-all">
-<div>
-<div class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-3xl">verified_user</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">Validação de Identidade</h3>
-<p class="text-white/80 leading-relaxed text-sm">
-                                Processo seguro de validação de identidade para garantir que o auxílio humanitário chegue às pessoas certas de forma rápida e digna.
+                            </div>
+                            <div class="mt-10 flex flex-wrap gap-3">
+                                <span
+                                    class="px-3 py-1.5 bg-primary-container rounded-full text-xs font-bold text-on-primary-container">AES-256</span>
+                                <span
+                                    class="px-3 py-1.5 bg-primary-container rounded-full text-xs font-bold text-on-primary-container">TLS
+                                    1.3</span>
+                                <span
+                                    class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-bold text-secondary">LGPD</span>
+                                <span
+                                    class="px-3 py-1.5 bg-surface-container rounded-full text-xs font-bold text-secondary">GDPR</span>
+                            </div>
+                        </div>
+                        <!-- Ícone decorativo de fundo -->
+                        <span
+                            class="material-symbols-outlined absolute right-[-5%] bottom-[-5%] text-[160px] text-primary/5 group-hover:text-primary/10 transition-colors duration-500 pointer-events-none select-none"
+                            style="font-variation-settings:'FILL' 1;">lock</span>
+                    </div>
+
+                    <!-- Card 2: Cadastro de Refugiados -->
+                    <div
+                        class="group card-lift bg-primary text-on-primary rounded-2xl p-8 flex flex-col justify-between hover:shadow-2xl overflow-hidden relative reveal reveal-d1">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none">
+                        </div>
+                        <div class="relative z-10">
+                            <div
+                                class="w-12 h-12 bg-white/20 text-white rounded-xl flex items-center justify-center mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+                                <span class="material-symbols-outlined text-3xl"
+                                    style="font-variation-settings:'FILL' 1;">person_add</span>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-4">Cadastro de Refugiados</h3>
+                            <p class="text-white/80 leading-relaxed text-sm">
+                                Formulários completos para registro de identidade, histórico migratório, situação
+                                familiar e documentação. Dados estruturados e rastreáveis desde o primeiro atendimento.
                             </p>
                         </div>
                         <div class="mt-8 border-t border-white/10 pt-5 relative z-10">
@@ -600,95 +677,202 @@
                             que o processamento de dados humanitários respeite as soberanias nacionais e os direitos
                             humanos fundamentais.
                         </p>
-<div class="space-y-6">
-<div class="flex items-start gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary">verified</span>
-</div>
-<div>
-<h4 class="font-bold text-lg text-on-surface">ISO/IEC 27001</h4>
-<p class="text-on-surface-variant text-sm">Certificação de sistema de gestão de segurança da informação.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary">security</span>
-</div>
-<div>
-<h4 class="font-bold text-lg text-on-surface">Criptografia de Ponta</h4>
-<p class="text-on-surface-variant text-sm">Criptografia de disco e tráfego para proteção contra acessos não autorizados.</p>
-</div>
-</div>
-<div class="flex items-start gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary">gavel</span>
-</div>
-<div>
-<h4 class="font-bold text-lg text-on-surface">GDPR &amp; LGPD Compliance</h4>
-<p class="text-on-surface-variant text-sm">Estrutura preparada para as mais rígidas leis de proteção de dados.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="lg:w-1/2 relative">
-<div class="aspect-square bg-slate-50 rounded-[2rem] border border-slate-100 flex items-center justify-center p-12 overflow-hidden shadow-2xl">
-<div class="relative w-full h-full flex flex-col items-center justify-center text-center space-y-6">
-<div class="w-32 h-32 bg-primary rounded-full flex items-center justify-center text-white shadow-lg shadow-primary/40">
-<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'FILL' 1;">policy</span>
-</div>
-<div>
-<span class="text-3xl font-black text-primary block">TRUSTED</span>
-<span class="text-on-surface-variant font-medium tracking-widest uppercase text-sm">Verified Governance</span>
-</div>
-<div class="grid grid-cols-2 gap-4 w-full pt-8">
-<div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-<div class="text-2xl font-bold text-secondary">99.9%</div>
-<div class="text-[10px] text-on-surface-variant uppercase font-bold">Uptime Garantido</div>
-</div>
-<div class="bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-<div class="text-2xl font-bold text-secondary">24/7</div>
-<div class="text-[10px] text-on-surface-variant uppercase font-bold">Monitoramento</div>
-</div>
-</div>
-</div>
-<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_white_80%)] pointer-events-none"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-24">
-<div class="container max-w-5xl mx-auto px-6">
-<div class="bg-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
-<div class="absolute top-0 right-0 p-8 text-white/5 pointer-events-none">
-<span class="material-symbols-outlined text-[120px]">shield</span>
-</div>
-<h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Pronto para modernizar sua gestão humanitária?
-                    </h2>
-<p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-                        Junte-se a dezenas de organizações que já confiam na Guardian Ledger para garantir a integridade dos dados de quem mais precisa.
-                    </p>
-<div class="flex flex-col md:flex-row gap-4 justify-center">
-<button class="bg-white text-primary px-10 py-4 rounded-lg font-bold text-lg hover:bg-on-primary transition-all shadow-xl active:scale-95">
-                            Solicitar Demo
-                        </button>
-<button class="bg-primary-dim border border-white/30 text-white px-10 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all active:scale-95">
-                            Ver Documentação
-                        </button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full mt-auto bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
-<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto">
-<div class="mb-6 md:mb-0">
-<div class="font-manrope font-semibold text-slate-900 dark:text-slate-100 text-lg mb-2">Guardian Ledger</div>
-<div class="font-inter text-sm text-slate-500 dark:text-slate-500">
-                    © 2024 Guardian Ledger. Institutional Refugee Registration Systems.
+                        <div class="space-y-3">
+                            <div
+                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
+                                <div
+                                    class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-secondary group-hover:text-white transition-colors"
+                                        style="font-variation-settings:'FILL' 1;">verified</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-base text-on-surface">ISO/IEC 27001</h4>
+                                    <p class="text-on-surface-variant text-sm mt-0.5">Certificação de sistema de gestão
+                                        de segurança da informação.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
+                                <div
+                                    class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-secondary group-hover:text-white transition-colors"
+                                        style="font-variation-settings:'FILL' 1;">lock</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-base text-on-surface">AES-256 bit</h4>
+                                    <p class="text-on-surface-variant text-sm mt-0.5">Criptografia de disco e tráfego
+                                        para proteção contra acessos não autorizados.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-container transition-colors group cursor-default">
+                                <div
+                                    class="w-11 h-11 flex-shrink-0 bg-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
+                                    <span
+                                        class="material-symbols-outlined text-secondary group-hover:text-white transition-colors"
+                                        style="font-variation-settings:'FILL' 1;">gavel</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-base text-on-surface">GDPR &amp; LGPD Compliance</h4>
+                                    <p class="text-on-surface-variant text-sm mt-0.5">Estrutura preparada para as mais
+                                        rígidas leis de proteção de dados vigentes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Widget de confiança -->
+                    <div class="lg:w-1/2 reveal reveal-d2">
+                        <div
+                            class="aspect-square bg-gradient-to-br from-slate-50 to-primary-container/20 rounded-[2.5rem] border border-slate-100 flex items-center justify-center p-10 overflow-hidden shadow-2xl">
+                            <div
+                                class="relative w-full h-full flex flex-col items-center justify-center text-center space-y-5">
+                                <!-- Anéis animados -->
+                                <div class="relative flex items-center justify-center">
+                                    <div class="absolute w-40 h-40 bg-primary/10 rounded-full ping-slow"></div>
+                                    <div class="absolute w-32 h-32 bg-primary/15 rounded-full ping-slow"
+                                        style="animation-delay: 0.7s"></div>
+                                    <div
+                                        class="w-24 h-24 bg-primary rounded-full flex items-center justify-center text-white shadow-2xl shadow-primary/40 relative z-10">
+                                        <span class="material-symbols-outlined text-5xl"
+                                            style="font-variation-settings:'FILL' 1;">policy</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-3xl font-black text-primary block tracking-tight">TRUSTED</span>
+                                    <span
+                                        class="text-on-surface-variant font-medium tracking-widest uppercase text-xs">Verified
+                                        Governance</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3 w-full pt-4">
+                                    <div
+                                        class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                        <div class="text-2xl font-bold text-secondary font-headline">99.9%</div>
+                                        <div
+                                            class="text-[10px] text-on-surface-variant uppercase font-bold mt-1 tracking-wide">
+                                            Uptime</div>
+                                    </div>
+                                    <div
+                                        class="bg-white border border-slate-100 p-4 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                        <div class="text-2xl font-bold text-secondary font-headline">24/7</div>
+                                        <div
+                                            class="text-[10px] text-on-surface-variant uppercase font-bold mt-1 tracking-wide">
+                                            Monitoramento</div>
+                                    </div>
+                                    <div
+                                        class="col-span-2 bg-white border border-slate-100 p-3.5 rounded-2xl shadow-sm flex items-center gap-3 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                                        <span class="material-symbols-outlined text-green-500"
+                                            style="font-variation-settings:'FILL' 1;">check_circle</span>
+                                        <span class="text-sm font-semibold text-on-surface">Auditoria Contínua
+                                            Ativa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_35%,_white_80%)] pointer-events-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA ── -->
+        <section class="py-24 bg-surface">
+            <div class="container max-w-5xl mx-auto px-6">
+                <div class="bg-primary rounded-3xl p-12 md:p-20 text-center relative overflow-hidden reveal">
+                    <!-- Decorações -->
+                    <div
+                        class="absolute top-0 right-0 w-72 h-72 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-56 h-56 bg-white/5 rounded-full -translate-x-1/3 translate-y-1/3 pointer-events-none">
+                    </div>
+                    <span
+                        class="material-symbols-outlined absolute top-6 left-8 text-[80px] text-white/5 pointer-events-none select-none"
+                        style="font-variation-settings:'FILL' 1;">lock</span>
+                    <span
+                        class="material-symbols-outlined absolute bottom-6 right-8 text-[110px] text-white/5 pointer-events-none select-none"
+                        style="font-variation-settings:'FILL' 1;">shield</span>
+
+                    <div class="relative z-10">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/20 text-white/90 text-xs font-bold uppercase tracking-wider mb-6">
+                            <span class="w-2 h-2 bg-white rounded-full dot-pulse"></span>
+                            Pronto para começar
+                        </div>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                            Modernize sua gestão<br class="hidden md:block" /> humanitária hoje
+                        </h2>
+                        <p class="text-white/75 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+                            Cadastre, gerencie e analise dados de refugiados com segurança e eficiência — em uma única
+                            plataforma institucional.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="{% url 'login' %}"
+                                class="bg-white text-primary px-10 py-4 rounded-xl font-bold text-base hover:bg-primary-container transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">login</span>
+                                Acessar Plataforma
+                            </a>
+                            <a href="#features"
+                                class="border-2 border-white/30 text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-white/10 hover:border-white/50 transition-all active:scale-95 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-[18px]">info</span>
+                                Saiba Mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="w-full bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-8 pt-12 pb-8">
+            <div class="flex flex-col md:flex-row justify-between gap-10 mb-10">
+                <div class="max-w-xs">
+                    <div class="flex items-center gap-2.5 mb-3">
+                        <div class="w-7 h-7 bg-primary rounded-lg flex items-center justify-center shadow-sm">
+                            <span class="material-symbols-outlined text-white text-[16px]"
+                                style="font-variation-settings:'FILL' 1;">shield</span>
+                        </div>
+                        <span class="font-bold text-slate-900 font-headline">Guardian <span
+                                class="text-primary">Ledger</span></span>
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">Plataforma institucional de cadastro e gestão
+                        segura de refugiados para governos e agências globais.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-10 sm:gap-16">
+                    <div>
+                        <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Plataforma</h5>
+                        <ul class="space-y-2.5">
+                            <li><a href="#features"
+                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Recursos</a>
+                            </li>
+                            <li><a href="#security"
+                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Segurança</a>
+                            </li>
+                            <li><a href="{% url 'registros' %}"
+                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Registros</a>
+                            </li>
+                            <li><a href="{% url 'login' %}"
+                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Entrar</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Legal</h5>
+                        <ul class="space-y-2.5">
+                            <li><a href="#" class="text-sm text-slate-500 hover:text-primary transition-colors">Termos
+                                    de Uso</a></li>
+                            <li><a href="#"
+                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Privacidade</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-sm text-slate-500 hover:text-primary transition-colors">Suporte</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="border-t border-slate-200 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
