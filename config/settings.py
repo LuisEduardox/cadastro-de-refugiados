@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'refugees.apps.RefugeesConfig'
+    'refugees.apps.RefugeesConfig',
+    'encrypted_model_fields',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,5 @@ SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
 SESSION_COOKIE_AGE = 36000
+
+FIELD_ENCRYPTION_KEY = os.environ.get('FIELD_ENCRYPTION_KEY')
