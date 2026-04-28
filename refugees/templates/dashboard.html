@@ -110,7 +110,7 @@
 </button>
 </div>
 <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
-<img alt="Avatar do Administrador" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNxTZXI4JJJSxYOwE1lM8QVyAls0te7sIsrjXFr4lOUYldTDKSylt5YMqTtJREjswYyKONHalyFzC3GIefIeYt2kMrH88pwPH6v6pfR6JSYHNL1Ofo4hsWmz00u50l_ZcpeDGCTcVqVO8agtNNlqyiXn6ynuvPMZY1GUlsOeQ57tJqtG2dYc4EzG036BVbbo9O3x8BxGhqkwqyAO5gPxPxYFnXjZ99uq6UgsW5jmYArBdeDupzK5v72d876P2xGlWS3vGiUBiH_Kg"/>
+<span class="material-symbols-outlined text-slate-400 w-full h-full flex items-center justify-center">account_circle</span>
 </div>
 </div>
 </header>
@@ -119,7 +119,7 @@
 <section class="mb-12">
 <h1 class="text-5xl font-extrabold text-on-surface tracking-tight mb-4">Bem-vindo, {{ user.username }}.</h1>
 <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-                    Sua estação de trabalho está segura e sincronizada. Gerencie novos registros e monitore estatísticas biométricas em tempo real.
+                    Sua estação de trabalho está segura e sincronizada. Gerencie registros de refugiados e acompanhe os recursos de proteção de dados ativos.
                 </p>
 </section>
 <!-- Bento Grid Dashboard -->
@@ -131,14 +131,10 @@
 <div class="p-2 bg-primary/10 rounded-lg">
 <span class="material-symbols-outlined text-primary" data-icon="group">group</span>
 </div>
-<h3 class="text-on-surface-variant font-bold tracking-widest uppercase text-xs">Total Registered Refugees</h3>
+<h3 class="text-on-surface-variant font-bold tracking-widest uppercase text-xs">Total de Refugiados Cadastrados</h3>
 </div>
 <div class="flex items-baseline gap-4">
 <span class="text-7xl font-extrabold text-on-surface tracking-tighter leading-none">{{ refugee_count }}</span>
-<span class="text-primary font-bold text-lg flex items-center gap-1">
-<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
-                                +4.2%
-                            </span>
 </div>
 </div>
 <div class="mt-12 flex gap-4 relative z-10">
@@ -162,52 +158,63 @@
 <div class="col-span-12 lg:col-span-4 grid grid-rows-2 gap-6">
 <div class="bg-secondary-container/30 p-6 rounded-[2rem] flex flex-col justify-center border border-white/40">
 <div class="flex justify-between items-start mb-4">
-<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
-<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Seguro</span>
+<span class="material-symbols-outlined text-secondary" data-icon="lock">lock</span>
+<span class="bg-secondary/10 text-secondary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">AES-256</span>
 </div>
-<h4 class="text-on-secondary-container font-medium text-sm">Identidade Confirmada</h4>
-<p class="text-3xl font-bold text-on-secondary-container mt-1">98.4%</p>
+<h4 class="text-on-secondary-container font-medium text-sm">Campos Criptografados</h4>
+<p class="text-3xl font-bold text-on-secondary-container mt-1">9 campos</p>
+<p class="text-xs text-on-secondary-container/70 mt-1">por registro de refugiado</p>
 </div>
 <div class="bg-tertiary-container/30 p-6 rounded-[2rem] flex flex-col justify-center border border-white/40">
 <div class="flex justify-between items-start mb-4">
-<span class="material-symbols-outlined text-tertiary" data-icon="pending_actions">pending_actions</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="domain_verification">domain_verification</span>
+<span class="bg-tertiary/10 text-tertiary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Whitelist</span>
 </div>
-<h4 class="text-on-tertiary-container font-medium text-sm">Pending Approval</h4>
-<p class="text-3xl font-bold text-on-tertiary-container mt-1">156</p>
+<h4 class="text-on-tertiary-container font-medium text-sm">Domínios de E-mail Permitidos</h4>
+<p class="text-3xl font-bold text-on-tertiary-container mt-1">4 domínios</p>
+<p class="text-xs text-on-tertiary-container/70 mt-1">gmail · hotmail · yahoo · ifpb</p>
 </div>
 </div>
 </div>
-{% comment %} footer sumary {% endcomment %}
+<!-- Footer Summary Cards -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
 <div class="bg-primary rounded-3xl p-6 text-on-primary shadow-lg shadow-primary/20 flex flex-col justify-between min-h-[160px] relative overflow-hidden">
-<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 rotate-12">verified_user</span>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-10 rotate-12">enhanced_encryption</span>
 <div>
 <span class="text-sm font-bold opacity-80 uppercase tracking-widest">Segurança</span>
 <h3 class="text-2xl font-bold mt-1 leading-tight">Dados Criptografados</h3>
 </div>
-<p class="text-sm opacity-90">Todos os registros são protegidos por protocolo AES-256 e biometria obrigatória.</p>
+<p class="text-sm opacity-90">Todos os dados sensíveis dos refugiados são armazenados com criptografia de campo via AES-256.</p>
 </div>
-<div class="bg-surface-container-high rounded-3xl p-6 border border-outline-variant/20 flex flex-col justify-between min-h-[160px]">
+<div class="bg-surface-container-high rounded-3xl p-6 border border-outline-variant/20 flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-5 rotate-12">password</span>
 <div>
-<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Suporte</span>
-<h3 class="text-2xl font-bold text-on-surface mt-1 leading-tight">Canal Humanitário</h3>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Autenticação</span>
+<h3 class="text-2xl font-bold text-on-surface mt-1 leading-tight">Segurança de Senhas</h3>
 </div>
-<div class="flex items-center gap-3">
-<div class="flex -space-x-2">
-<img alt="Support agent 1" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_dYwg4km9WOGF0onpgK-BKndesPA5e79okjPRdYYyfx9P10vP-5KtJ0mpymHLEJPyUe54xRITBo0NpF9CDJRypjrRE-zR46zNaTcmrYCb7H_wivgpGrGRcZQCi0upGk-nbFYoZE036H3rpOZINdXHbkB4DNnO7UpTyleovL_Z9mwxB9iXcueFzQPrs2khk1GPfnJFmGlvXur3B3EFq-r_j1ehrfmfbmmY2MWD2R75i-67HfEOT8m1WkmRZ_7zUIhHLsu0nGFk6iA"/>
-<img alt="Support agent 2" class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUJbKfHl-97RYbNowPx2_21Lp4MNSqp7qfAkXB8iOQyWvsD-dxNYgrscV0Pr60LtLIQrUrvxI5yLouUO8KAWQiv3HKprWbAGQ26aWqG6PGz1bn_abo6M7hDmo7SBOlF9wU95uRvA7TUejq-Z8szODFtUZB0WG5Mb60kgoM8xH05E708Xj6JMULgub_dN6QvRPa7xac1-Nx0H2rQa0O7kXPo6SNERWyfSwsDbBIxVfs5jCOYj4gWhdH3jSD2-xb4H8JDig_Q0j2HqI"/>
+<div class="flex flex-col gap-1 mt-2">
+<span class="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">block</span>
+~50 senhas comuns bloqueadas
+</span>
+<span class="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">check_circle</span>
+Validadores de comprimento e complexidade
+</span>
 </div>
-<span class="text-xs font-semibold text-primary">Atendimento 24/7 disponível</span>
 </div>
-</div>
-<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/10 flex flex-col justify-between min-h-[160px]">
+<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/10 flex flex-col justify-between min-h-[160px] relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl opacity-5 rotate-12">manage_accounts</span>
 <div>
-<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Atualizações</span>
-<h3 class="text-2xl font-bold text-on-surface mt-1 leading-tight">Último Backup</h3>
+<span class="text-sm font-bold text-on-surface-variant uppercase tracking-widest">Controle de Acesso</span>
+<h3 class="text-2xl font-bold text-on-surface mt-1 leading-tight">Níveis de Permissão</h3>
 </div>
-<div class="flex items-center justify-between">
-<span class="text-sm text-on-surface-variant font-medium">Hoje, às 04:00 AM</span>
-<span class="text-green-600 bg-green-100 px-3 py-1 rounded-full text-xs font-bold">Sucesso</span>
+<div class="flex items-center justify-between mt-2">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">Admin</span>
+<span class="text-xs font-semibold text-on-surface-variant bg-surface-container px-2 py-1 rounded-full mt-1">Usuário Padrão</span>
+</div>
+<span class="text-xs text-on-surface-variant font-medium text-right max-w-[100px]">Acesso separado por role</span>
 </div>
 </div>
 </div>
@@ -215,7 +222,7 @@
 </div>
 <!-- Footer Info -->
 <footer class="w-full px-10 py-10 border-t border-slate-200/20 text-center">
-<p class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Guardian Ledger Framework v4.2.0 • Secured by BioVault Systems</p>
+<p class="text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">Guardian Ledger • Proteção de Dados com Criptografia de Campo</p>
 </footer>
 </main>
 </body></html>
