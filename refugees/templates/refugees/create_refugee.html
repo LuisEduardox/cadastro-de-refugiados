@@ -181,10 +181,14 @@
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">
     E-mail <span class="text-error">*</span>
 </label>
-<input name="email" type="email" required
+<input name="email" type="email" required id="email-field"
     class="w-full bg-surface-container-lowest border-outline/15 border rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all placeholder:text-outline-variant"
-    placeholder="exemplo@email.com"
+    placeholder="exemplo@gmail.com"
     value="{{ post.email|default:'' }}"/>
+<p id="email-error" class="hidden mt-2 text-xs font-semibold text-red-600 flex items-center gap-1">
+    <span class="material-symbols-outlined text-[14px]">error</span>
+    Domínio não permitido. Use @gmail.com, @hotmail.com, @yahoo.com ou @academico.ifpb.edu.br.
+</p>
 </div>
 <div class="md:col-span-3">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">
@@ -225,6 +229,25 @@
 </div>
 </div>
 <script>
+    const ALLOWED_DOMAINS = ['gmail.com', 'hotmail.com', 'yahoo.com', 'academico.ifpb.edu.br'];
+    const emailField = document.getElementById('email-field');
+    const emailError = document.getElementById('email-error');
+
+    function validateEmailDomain() {
+        const domain = emailField.value.split('@')[1]?.toLowerCase() ?? '';
+        const valid = !emailField.value || ALLOWED_DOMAINS.includes(domain);
+        emailError.classList.toggle('hidden', valid);
+        emailField.classList.toggle('border-red-400', !valid);
+        return valid;
+    }
+
+    emailField.addEventListener('input', validateEmailDomain);
+    emailField.addEventListener('blur', validateEmailDomain);
+
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+        if (!validateEmailDomain()) e.preventDefault();
+    });
+
     const toggleBtn = document.getElementById('togglePassword');
     const passField = document.getElementById('password-field');
     const passIcon = document.getElementById('passwordIcon');

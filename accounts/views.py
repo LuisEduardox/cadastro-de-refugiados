@@ -7,6 +7,7 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib import messages
+from .validators import email_domain_is_allowed
 
 
 def is_admin_user(user):
@@ -31,6 +32,10 @@ def register(request):
         validate_email(email)
     except ValidationError:
         messages.error(request, "O formato do e-mail inserido é inválido.")
+        return redirect('register')
+
+    if not email_domain_is_allowed(email):
+        messages.error(request, "Domínio de e-mail não permitido. Use @gmail.com, @hotmail.com, @yahoo.com ou @academico.ifpb.edu.br.")
         return redirect('register')
 
     if User.objects.filter(email=email).exists():

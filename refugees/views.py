@@ -11,6 +11,7 @@ from django.db import transaction
 from .models import Refugees
 from accounts.models import User
 from accounts.choices import Role
+from accounts.validators import email_domain_is_allowed
 
 # Create your views here.
 class HomeTemplateView(TemplateView):
@@ -114,6 +115,10 @@ def create_refugee_register(request):
         validate_email(email)
     except ValidationError:
         messages.error(request, "O formato do e-mail é inválido.")
+        return render(request, template, {'post': request.POST})
+
+    if not email_domain_is_allowed(email):
+        messages.error(request, "Domínio de e-mail não permitido. Use @gmail.com, @hotmail.com, @yahoo.com ou @academico.ifpb.edu.br.")
         return render(request, template, {'post': request.POST})
 
     if User.objects.filter(email=email).exists():
