@@ -100,59 +100,13 @@
 </head>
 <body class="bg-surface text-on-surface min-h-screen">
 {% if user.is_authenticated %}
-<!-- SideNavBar Section -->
-<aside class="fixed h-screen w-72 left-0 top-0 bg-[#f1f4f6]/90 backdrop-blur-2xl dark:bg-slate-900/90 flex flex-col py-8 px-4 border-r border-slate-100 dark:border-slate-800 shadow-[12px_0_40px_rgba(43,52,55,0.04)] z-50">
-<div class="mb-10 px-4">
-<a href="{% url "dashboard" %}">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
-<div class="flex flex-col">
-<span class="font-['Manrope'] font-black text-[#2b3437] dark:text-white uppercase tracking-widest text-xs">Guardian Ledger</span>
-<p class="text-on-surface-variant text-[10px] uppercase tracking-wider opacity-70">Institutional Portal</p>
-</div>
-</div>
-</a>
-</div>
-<nav class="flex-1 space-y-2">
-<a href="{% url "dashboard" %}" class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-medium text-sm">Dashboard</span>
-</a>
-<a href="{% url "registros" %}" class="bg-[#005EB8]/10 text-[#005EB8] dark:bg-blue-400/10 dark:text-blue-300 rounded-xl font-semibold px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] transition-all duration-300">
-<span class="material-symbols-outlined" data-icon="person_add">group</span>
-<span class="font-medium text-sm">Registrations</span>
-</a>
-<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-medium text-sm">Validation</span>
-</a>
-<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 dark:hover:bg-slate-800 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-medium text-sm">Settings</span>
-</a>
-</nav>
-<div class="mt-auto pt-8 border-t border-slate-200/50 space-y-2">
-<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="#">
-<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
-<span class="font-medium text-sm">Support</span>
-</a>
-<a class="text-[#586064] dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:translate-y-[-2px] hover:bg-white/50 transition-all duration-300" href="{% url 'logout' %}">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span class="font-medium text-sm">Logout</span>
-</a>
-</div>
-</aside>
+{% include 'partials/aside.html' with active_page='registros' %}
 {% endif %}
 <!-- Main Canvas -->
 <main class="{% if user.is_authenticated %}ml-72{% endif %} min-h-screen">
 <!-- TopNavBar -->
 <header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0 border-b border-slate-200/30 shadow-sm shadow-slate-200/90">
-<div class="flex items-center gap-6">
-<div class="relative flex items-center">
-<span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
-<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-64 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar..." type="text"/>
-</div>
-</div>
+<div class="flex items-center gap-6"></div>
 <div class="flex items-center gap-4">
 <div class="flex gap-2">
 <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
@@ -205,8 +159,7 @@
 </div>
 {% endif %}
 
-{% if not user.is_authenticated %}
-<!-- Section: Account Information (only for unauthenticated users) -->
+<!-- Section: Account Information -->
 <div class="md:col-span-12 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(43,52,55,0.06)] border border-outline-variant/10">
 <div class="flex items-center gap-3 mb-8">
 <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -233,7 +186,7 @@
     placeholder="exemplo@email.com"
     value="{{ post.email|default:'' }}"/>
 </div>
-<div>
+<div class="md:col-span-3">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">
     Senha <span class="text-error">*</span>
 </label>
@@ -246,6 +199,28 @@
         <span class="material-symbols-outlined text-[20px]" id="passwordIcon">visibility</span>
     </button>
 </div>
+<div class="mt-3 space-y-3">
+    <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex gap-1">
+        <div id="rr-bar-1" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+        <div id="rr-bar-2" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+        <div id="rr-bar-3" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+        <div id="rr-bar-4" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+    </div>
+    <div class="grid grid-cols-2 gap-2 text-[11px] font-bold uppercase tracking-tight">
+        <div id="rr-req-length" class="flex items-center gap-1.5 text-outline-variant">
+            <span class="material-symbols-outlined text-[14px]">circle</span> 8+ Caracteres
+        </div>
+        <div id="rr-req-upper" class="flex items-center gap-1.5 text-outline-variant">
+            <span class="material-symbols-outlined text-[14px]">circle</span> Letra Maiúscula
+        </div>
+        <div id="rr-req-number" class="flex items-center gap-1.5 text-outline-variant">
+            <span class="material-symbols-outlined text-[14px]">circle</span> Um Número
+        </div>
+        <div id="rr-req-special" class="flex items-center gap-1.5 text-outline-variant">
+            <span class="material-symbols-outlined text-[14px]">circle</span> Caractere Especial
+        </div>
+    </div>
+</div>
 </div>
 </div>
 </div>
@@ -253,13 +228,44 @@
     const toggleBtn = document.getElementById('togglePassword');
     const passField = document.getElementById('password-field');
     const passIcon = document.getElementById('passwordIcon');
+
     toggleBtn.addEventListener('click', () => {
         const isPassword = passField.getAttribute('type') === 'password';
         passField.setAttribute('type', isPassword ? 'text' : 'password');
         passIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
     });
+
+    passField.addEventListener('input', () => {
+        const val = passField.value;
+        const checks = {
+            length:  val.length >= 8,
+            upper:   /[A-Z]/.test(val),
+            number:  /[0-9]/.test(val),
+            special: /[^A-Za-z0-9]/.test(val),
+        };
+
+        Object.entries(checks).forEach(([key, ok]) => {
+            const el   = document.getElementById(`rr-req-${key}`);
+            const icon = el.querySelector('span');
+            if (ok) {
+                el.classList.remove('text-outline-variant');
+                el.classList.add('text-primary');
+                icon.textContent = 'check_circle';
+            } else {
+                el.classList.remove('text-primary');
+                el.classList.add('text-outline-variant');
+                icon.textContent = 'circle';
+            }
+        });
+
+        const score  = Object.values(checks).filter(Boolean).length;
+        const colors = ['bg-error', 'bg-orange-400', 'bg-yellow-400', 'bg-green-500'];
+        ['rr-bar-1','rr-bar-2','rr-bar-3','rr-bar-4'].forEach((id, idx) => {
+            document.getElementById(id).className =
+                `h-full w-1/4 transition-all duration-500 rounded-full ${idx < score ? colors[score - 1] : 'bg-transparent'}`;
+        });
+    });
 </script>
-{% endif %}
 
 <!-- Section: Personal Information -->
 <div class="md:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(43,52,55,0.06)] border border-outline-variant/10">
