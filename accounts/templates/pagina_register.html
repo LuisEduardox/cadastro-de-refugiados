@@ -1,324 +1,248 @@
 <!DOCTYPE html>
-
-<html class="light" lang="pt-BR"><head>
+<html class="light" lang="pt-BR">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Haven Protocol - Registro Seguro</title>
+<title>Guardian Ledger - Registrar Colaborador</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#005EB8",
-                        "primary-hover": "#004a91",
-                        "surface-container": "#F2F7FB",
-                        "surface-bright": "#FFFFFF",
-                        "on-tertiary-fixed-variant": "#54536f",
-                        "outline-variant": "#E0E5E9",
-                        "on-error": "#fff7f6",
-                        "on-primary-container": "#005EB8",
-                        "background": "#F8FAFC",
-                        "surface-container-high": "#EBF1F5",
-                        "secondary-dim": "#3d5762",
-                        "tertiary-dim": "#51516c",
-                        "tertiary": "#5d5c78",
-                        "surface-container-low": "#F8FAFC",
-                        "error": "#B00020",
-                        "on-secondary-container": "#3c5561",
-                        "surface-variant": "#E1E7EC",
-                        "tertiary-fixed": "#d9d7f8",
-                        "on-surface-variant": "#64748B",
-                        "surface": "#FFFFFF",
-                        "error-dim": "#4e0309",
-                        "surface-container-highest": "#E2E8F0",
-                        "on-error-container": "#B00020",
-                        "tertiary-fixed-dim": "#cbc9e9",
-                        "secondary-fixed-dim": "#bdd9e6",
-                        "on-secondary-fixed-variant": "#455f6b",
-                        "primary-dim": "#004a91",
-                        "on-tertiary-fixed": "#383751",
-                        "tertiary-container": "#d9d7f8",
-                        "on-primary-fixed-variant": "#005EB8",
-                        "secondary": "#475569",
-                        "on-surface": "#0F172A",
-                        "secondary-container": "#E2E8F0",
-                        "on-background": "#0F172A",
-                        "inverse-on-surface": "#94A3B8",
-                        "on-secondary": "#FFFFFF",
-                        "on-primary": "#FFFFFF",
-                        "surface-dim": "#F1F5F9",
-                        "inverse-surface": "#0F172A",
-                        "outline": "#94A3B8",
-                        "surface-container-lowest": "#FFFFFF",
-                        "primary-container": "#E0E7FF",
-                        "primary-fixed": "#E0E7FF",
-                        "on-tertiary": "#FFFFFF",
-                        "inverse-primary": "#73a3f8",
-                        "primary-fixed-dim": "#C7D2FE",
-                        "secondary-fixed": "#E2E8F0",
-                        "on-tertiary-container": "#4b4a65",
-                        "on-primary-fixed": "#002142",
-                        "error-container": "#FEE2E2",
-                        "surface-tint": "#005EB8",
-                        "on-secondary-fixed": "#1E293B"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.375rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "fontFamily": {
-                        "headline": ["Manrope", "Inter", "sans-serif"],
-                        "body": ["Inter", "sans-serif"],
-                        "label": ["Inter", "sans-serif"]
-                    }
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "primary": "#255dad",
+                    "surface-container": "#eaeff1",
+                    "surface-bright": "#f8f9fa",
+                    "outline-variant": "#abb3b7",
+                    "on-error": "#fff7f6",
+                    "on-primary-container": "#0f509f",
+                    "background": "#f8f9fa",
+                    "surface-container-high": "#e3e9ec",
+                    "secondary-dim": "#3d5762",
+                    "surface-container-low": "#f1f4f6",
+                    "error": "#9f403d",
+                    "on-secondary-container": "#3c5561",
+                    "surface-variant": "#dbe4e7",
+                    "on-surface-variant": "#586064",
+                    "surface": "#f8f9fa",
+                    "surface-container-highest": "#dbe4e7",
+                    "on-error-container": "#752121",
+                    "secondary": "#49636f",
+                    "on-surface": "#2b3437",
+                    "secondary-container": "#cbe7f5",
+                    "on-background": "#2b3437",
+                    "on-secondary": "#f2faff",
+                    "on-primary": "#f7f7ff",
+                    "surface-dim": "#d1dce0",
+                    "outline": "#737c7f",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#d7e2ff",
+                    "primary-fixed": "#d7e2ff",
+                    "primary-dim": "#1151a0",
+                    "inverse-primary": "#73a3f8",
+                    "primary-fixed-dim": "#c1d5ff",
+                    "error-container": "#fe8983",
+                    "surface-tint": "#255dad"
                 },
-            },
+                "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+                },
+                "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+                }
+            }
         }
-    </script>
+    }
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC;
-        }
-        h1, h2, h3, .font-headline {
-            font-family: 'Manrope', sans-serif;
-        }
-    </style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+</style>
 </head>
-<body class="bg-background text-on-surface min-h-screen flex items-center justify-center p-4 md:p-8">
-<!-- Background Decoration -->
-<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[120px]"></div>
-<div class="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-secondary/5 blur-[120px]"></div>
-</div>
-<!-- Registration Container -->
-<main class="relative z-10 w-full max-w-[1080px] grid grid-cols-1 md:grid-cols-2 bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] border border-outline-variant/30">
-<!-- Left Side: Visual/Branding Section -->
-<section class="hidden md:flex flex-col justify-between p-12 bg-primary relative overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="high-tech secure digital network background" src="https://jpimg.com.br/uploads/2023/10/refugiados-gaza-1-750x450.jpg"/>
-</div>
-<div class="relative z-10">
-<div class="flex items-center gap-3 mb-16">
-<div class="w-10 h-10 bg-white/15 backdrop-blur-xl rounded-xl flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">security</span>
-</div>
-<span class="font-headline font-extrabold text-xl tracking-tight text-white">Refugees Protocol</span>
-</div>
-<h1 class="text-4xl lg:text-5xl font-headline font-bold text-white leading-[1.1] mb-6">
-                    Faça parte da nossa Missão
-                </h1>
-<p class="text-white/80 text-lg font-body max-w-sm leading-relaxed">
-                    Crie seu acesso institucional ao Sistema de Cadastro de Refugiados e colabore com a segurança humanitária global.
-                </p>
-</div>
-<div class="relative z-10 mt-auto">
-<div class="flex items-center gap-4 text-white/70 text-sm">
-</div>
-</div>
-</section>
-<!-- Right Side: Register Form Section -->
-<section class="flex flex-col justify-center p-8 md:p-16 bg-white">
-<div class="max-w-md w-full mx-auto">
-<div class="mb-10 text-left">
-<div class="md:hidden flex mb-8">
-<span class="material-symbols-outlined text-primary text-4xl">security</span>
-</div>
-<h2 class="text-3xl font-headline font-bold text-on-surface tracking-tight mb-3">Criar nova conta</h2>
-<p class="text-on-surface-variant font-body">Insira seus dados para cadastro no sistema.</p>
-</div>
-<!-- Bloco de Mensagens de Erro/Sucesso (Django Messages) -->
-{% if messages %}
-    <div class="mb-8 space-y-3">
-        {% for message in messages %}
-            <div class="p-4 rounded-xl flex items-center gap-3 {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-200{% else %}bg-green-50 text-green-700 border border-green-200{% endif %} shadow-sm">
-                <span class="material-symbols-outlined text-xl">
-                    {% if message.tags == 'error' %}error{% else %}check_circle{% endif %}
-                </span>
-                <p class="text-sm font-semibold tracking-tight">{{ message }}</p>
-            </div>
-        {% endfor %}
+<body class="bg-surface text-on-surface min-h-screen">
+
+{% include 'partials/aside.html' with active_page='register' %}
+
+<main class="ml-72 min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl h-16 flex justify-between items-center px-8 shrink-0 border-b border-slate-200/30 shadow-sm shadow-slate-200/90">
+<div class="flex items-center gap-6">
+    <div class="relative flex items-center">
+        <span class="absolute left-3 text-slate-400 material-symbols-outlined">search</span>
+        <input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full w-64 focus:ring-2 focus:ring-primary text-sm" placeholder="Buscar..." type="text"/>
     </div>
+</div>
+<div class="flex items-center gap-4">
+    <button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-all">
+        <span class="material-symbols-outlined">notifications</span>
+    </button>
+    <div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ring-2 ring-white">
+        <div class="w-full h-full flex items-center justify-center text-sm font-bold text-slate-500">
+            {{ user.username|first|upper }}
+        </div>
+    </div>
+</div>
+</header>
+
+<!-- Content Area -->
+<div class="p-12 max-w-3xl mx-auto">
+<!-- Header -->
+<div class="mb-12">
+    <div class="flex items-center gap-2 text-primary font-bold text-sm tracking-widest uppercase mb-2">
+        <span>Administração</span>
+        <span class="text-outline-variant font-normal">/</span>
+        <span>Registrar Colaborador</span>
+    </div>
+    <h2 class="text-5xl font-extrabold text-on-surface tracking-tight leading-tight">Registrar Colaborador</h2>
+    <p class="text-on-surface-variant text-lg mt-4 max-w-2xl leading-relaxed">
+        Crie credenciais de acesso institucional para um novo colaborador. O usuário receberá permissões de administrador.
+    </p>
+</div>
+
+{% if messages %}
+<div class="mb-8 space-y-3">
+    {% for message in messages %}
+    <div class="p-4 rounded-xl flex items-center gap-3 {% if message.tags == 'error' %}bg-red-50 text-red-700 border border-red-200{% else %}bg-green-50 text-green-700 border border-green-200{% endif %}">
+        <span class="material-symbols-outlined text-xl">{% if message.tags == 'error' %}error{% else %}check_circle{% endif %}</span>
+        <p class="text-sm font-semibold">{{ message }}</p>
+    </div>
+    {% endfor %}
+</div>
 {% endif %}
 
-<form action="{% url 'register' %}" method="POST" class="space-y-6">
-    {% csrf_token %}
-    <div>
-        <label class="block text-[13px] font-bold text-on-surface uppercase tracking-wider mb-2" for="username">Nome de Usuario</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
-                <span class="material-symbols-outlined text-[20px]">person</span>
-            </div>
-            <input class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="username" name="username" placeholder="Escolha um nome de usuário" required="" type="text"/>
+<!-- Form -->
+<form method="post" action="{% url 'register' %}">
+{% csrf_token %}
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(43,52,55,0.06)] border border-outline-variant/10">
+    <div class="flex items-center gap-3 mb-8">
+        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <span class="material-symbols-outlined text-primary">manage_accounts</span>
         </div>
+        <h3 class="text-xl font-bold">Dados de Acesso</h3>
     </div>
-    <div>
-        <label class="block text-[13px] font-bold text-on-surface uppercase tracking-wider mb-2" for="email">E-mail Corporativo</label>
-        <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
-                <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="md:col-span-2">
+            <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">
+                Nome de Usuário <span class="text-error">*</span>
+            </label>
+            <input name="username" type="text" required
+                class="w-full bg-surface-container-lowest border-outline/15 border rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all placeholder:text-outline-variant"
+                placeholder="Ex: joao.silva"/>
+        </div>
+        <div>
+            <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">
+                E-mail Corporativo <span class="text-error">*</span>
+            </label>
+            <input name="email" type="email" required
+                class="w-full bg-surface-container-lowest border-outline/15 border rounded-xl px-4 py-3.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all placeholder:text-outline-variant"
+                placeholder="exemplo@organizacao.org"/>
+        </div>
+        <div>
+            <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">
+                Senha <span class="text-error">*</span>
+            </label>
+            <div class="relative">
+                <input name="password" type="password" required id="password-field"
+                    class="w-full bg-surface-container-lowest border-outline/15 border rounded-xl px-4 pr-12 py-3.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all placeholder:text-outline-variant"
+                    placeholder="Crie uma senha forte"/>
+                <button type="button" id="togglePassword"
+                    class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[20px]" id="passwordIcon">visibility</span>
+                </button>
             </div>
-            <input class="block w-full pl-11 pr-4 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="email" name="email" placeholder="exemplo@organizacao.org" required="" type="email"/>
-        </div>
-        <div id="email-feedback" class="mt-2 hidden items-center gap-1.5 text-[11px] font-bold uppercase tracking-tight">
-            <span class="material-symbols-outlined text-[14px]" id="email-feedback-icon">circle</span>
-            <span id="email-feedback-text"></span>
-        </div>
-    </div>
-
-    <script>
-        const emailInput = document.getElementById('email');
-        const emailFeedback = document.getElementById('email-feedback');
-        const emailFeedbackIcon = document.getElementById('email-feedback-icon');
-        const emailFeedbackText = document.getElementById('email-feedback-text');
-        const allowedDomains = [{% for d in allowed_domains %}"{{ d }}"{% if not forloop.last %},{% endif %}{% endfor %}];
-
-        emailInput.addEventListener('input', () => {
-            const parts = emailInput.value.split('@');
-            if (parts.length < 2 || parts[1] === '') {
-                emailFeedback.classList.add('hidden');
-                emailFeedback.classList.remove('flex');
-                return;
-            }
-            const domain = parts[1];
-            const valid = allowedDomains.includes(domain);
-            emailFeedback.classList.remove('hidden');
-            emailFeedback.classList.add('flex');
-            if (valid) {
-                emailFeedback.classList.replace('text-error', 'text-primary');
-                emailFeedback.classList.remove('text-error');
-                emailFeedback.classList.add('text-primary');
-                emailFeedbackIcon.textContent = 'check_circle';
-                emailFeedbackText.textContent = 'Domínio autorizado';
-            } else {
-                emailFeedback.classList.remove('text-primary');
-                emailFeedback.classList.add('text-error');
-                emailFeedbackIcon.textContent = 'cancel';
-                emailFeedbackText.textContent = `Domínio não autorizado. Use: ${allowedDomains.join(', ')}`;
-            }
-        });
-    </script>
-    <div>
-        <div class="flex justify-between items-center mb-2">
-            <label class="block text-[13px] font-bold text-on-surface uppercase tracking-wider" for="password">Chave de Acesso</label>
-        </div>
-        <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-outline">
-                <span class="material-symbols-outlined text-[20px]">lock</span>
-            </div>
-            <input class="block w-full pl-11 pr-12 py-3.5 bg-surface-container-low border border-outline-variant rounded-xl text-on-surface focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-200 placeholder:text-outline/60 text-sm" id="password" name="password" placeholder="Crie uma senha forte" required="" type="password"/>
-            <button class="absolute inset-y-0 right-0 pr-4 flex items-center text-outline hover:text-primary transition-colors" type="button" id="togglePassword">
-                <span class="material-symbols-outlined text-[20px]" id="passwordIcon">visibility</span>
-            </button>
-        </div>
-
-        <!-- Password Strength Meter -->
-        <div class="mt-3 space-y-3">
-            <div class="h-1.5 w-full bg-surface-container-highest rounded-full overflow-hidden flex gap-1">
-                <div id="bar-1" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
-                <div id="bar-2" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
-                <div id="bar-3" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
-                <div id="bar-4" class="h-full w-1/4 transition-all duration-500 bg-transparent"></div>
-            </div>
-            
-            <div class="grid grid-cols-2 gap-2 text-[11px] font-bold uppercase tracking-tight">
-                <div id="req-length" class="flex items-center gap-1.5 text-outline/50">
-                    <span class="material-symbols-outlined text-[14px]">circle</span> 8+ Caracteres
+            <!-- Password strength bars -->
+            <div class="mt-3 space-y-2">
+                <div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden flex gap-1">
+                    <div id="bar-1" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+                    <div id="bar-2" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+                    <div id="bar-3" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
+                    <div id="bar-4" class="h-full w-1/4 transition-all duration-500 bg-transparent rounded-full"></div>
                 </div>
-                <div id="req-upper" class="flex items-center gap-1.5 text-outline/50">
-                    <span class="material-symbols-outlined text-[14px]">circle</span> Letra Maiúscula
-                </div>
-                <div id="req-number" class="flex items-center gap-1.5 text-outline/50">
-                    <span class="material-symbols-outlined text-[14px]">circle</span> Um Número
-                </div>
-                <div id="req-special" class="flex items-center gap-1.5 text-outline/50">
-                    <span class="material-symbols-outlined text-[14px]">circle</span> Caractere Especial
+                <div class="grid grid-cols-2 gap-1 text-[11px] font-bold uppercase tracking-tight">
+                    <div id="req-length" class="flex items-center gap-1 text-outline-variant">
+                        <span class="material-symbols-outlined text-[13px]">circle</span> 8+ Caracteres
+                    </div>
+                    <div id="req-upper" class="flex items-center gap-1 text-outline-variant">
+                        <span class="material-symbols-outlined text-[13px]">circle</span> Letra Maiúscula
+                    </div>
+                    <div id="req-number" class="flex items-center gap-1 text-outline-variant">
+                        <span class="material-symbols-outlined text-[13px]">circle</span> Um Número
+                    </div>
+                    <div id="req-special" class="flex items-center gap-1 text-outline-variant">
+                        <span class="material-symbols-outlined text-[13px]">circle</span> Caractere Especial
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        const passwordInput = document.getElementById('password');
-        const toggleBtn = document.getElementById('togglePassword');
-        const icon = document.getElementById('passwordIcon');
-
-        // Toggle Visibility
-        toggleBtn.addEventListener('click', () => {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            icon.textContent = type === 'password' ? 'visibility' : 'visibility_off';
-        });
-
-        // Real-time Validation Logic
-        passwordInput.addEventListener('input', () => {
-            const val = passwordInput.value;
-            const checks = {
-                length: val.length >= 8,
-                upper: /[A-Z]/.test(val),
-                number: /[0-9]/.test(val),
-                special: /[^A-Za-z0-9]/.test(val)
-            };
-
-            // Update Icons and Colors
-            Object.keys(checks).forEach(key => {
-                const el = document.getElementById(`req-${key}`);
-                const icon = el.querySelector('span');
-                if (checks[key]) {
-                    el.classList.replace('text-outline/50', 'text-primary');
-                    icon.textContent = 'check_circle';
-                } else {
-                    el.classList.replace('text-primary', 'text-outline/50');
-                    icon.textContent = 'circle';
-                }
-            });
-
-            // Update Strength Bar
-            const score = Object.values(checks).filter(Boolean).length;
-            const bars = ['bar-1', 'bar-2', 'bar-3', 'bar-4'];
-            const colors = ['bg-error', 'bg-orange-400', 'bg-yellow-400', 'bg-green-500'];
-
-            bars.forEach((id, idx) => {
-                const bar = document.getElementById(id);
-                bar.className = `h-full w-1/4 transition-all duration-500 ${idx < score ? colors[score-1] : 'bg-surface-container-highest'}`;
-            });
-        });
-    </script>
-    <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-[0_8px_20px_rgba(0,94,184,0.25)] hover:bg-primary-hover hover:shadow-[0_10px_25px_rgba(0,94,184,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 flex items-center justify-center gap-2 no-underline">
-        <span>Registrar no Sistema</span>
-        <span class="material-symbols-outlined text-[20px]">app_registration</span>
-    </button>
+<!-- Action Bar -->
+<div class="flex items-center justify-between pt-8 border-t border-surface-container-high mt-8">
+    <div class="flex items-center gap-2 text-on-surface-variant text-sm italic">
+        <span class="material-symbols-outlined text-error text-lg">error</span>
+        Campos marcados com asterisco (*) são obrigatórios.
+    </div>
+    <div class="flex gap-4">
+        <a href="{% url 'registros' %}" class="px-8 py-3.5 rounded-xl font-semibold text-secondary hover:bg-surface-container-high transition-all">
+            Cancelar
+        </a>
+        <button type="submit" class="bg-gradient-to-br from-primary to-primary-dim text-white px-10 py-3.5 rounded-xl font-bold shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2">
+            <span class="material-symbols-outlined">person_add</span>
+            Registrar Colaborador
+        </button>
+    </div>
+</div>
 </form>
-<div class="mt-10 text-center">
-<p class="text-on-surface-variant text-sm font-medium">
-                        Já possui uma conta? 
-                        <a class="text-primary font-bold hover:underline ml-1" href="{% url 'login' %}">Acesse agora</a>
-</p>
 </div>
-<!-- Security Badges -->
-<div class="mt-12 flex items-center justify-center gap-8 pt-8 border-t border-outline-variant/50">
-<div class="flex items-center gap-2 text-outline/70">
-</div>
-<div class="flex items-center gap-2 text-outline/70">
-</div>
-</div>
-</div>
-</section>
 </main>
-<!-- Footer -->
-<footer class="fixed bottom-6 left-0 right-0 flex flex-col md:flex-row justify-center items-center gap-6 px-6 pointer-events-none">
-<div class="flex items-center gap-4 pointer-events-auto bg-white/80 backdrop-blur-md py-2.5 px-5 rounded-full border border-outline-variant shadow-sm">
-<p class="text-[10px] text-on-surface-variant font-bold tracking-wider uppercase opacity-60">
-            © 2026 Refugees PROTOCOL — COMPROMISSO COM A SEGURANÇA HUMANITÁRIA
-        </p>
-</footer>
-</body></html>
+
+<script>
+    const passwordInput = document.getElementById('password-field');
+    const toggleBtn = document.getElementById('togglePassword');
+    const icon = document.getElementById('passwordIcon');
+
+    toggleBtn.addEventListener('click', () => {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        icon.textContent = type === 'password' ? 'visibility' : 'visibility_off';
+    });
+
+    passwordInput.addEventListener('input', () => {
+        const val = passwordInput.value;
+        const checks = {
+            length: val.length >= 8,
+            upper: /[A-Z]/.test(val),
+            number: /[0-9]/.test(val),
+            special: /[^A-Za-z0-9]/.test(val)
+        };
+        Object.keys(checks).forEach(key => {
+            const el = document.getElementById(`req-${key}`);
+            const iconEl = el.querySelector('span');
+            if (checks[key]) {
+                el.classList.replace('text-outline-variant', 'text-primary');
+                iconEl.textContent = 'check_circle';
+            } else {
+                el.classList.replace('text-primary', 'text-outline-variant');
+                iconEl.textContent = 'circle';
+            }
+        });
+        const score = Object.values(checks).filter(Boolean).length;
+        ['bar-1','bar-2','bar-3','bar-4'].forEach((id, idx) => {
+            const colors = ['bg-error','bg-orange-400','bg-yellow-400','bg-green-500'];
+            document.getElementById(id).className =
+                `h-full w-1/4 transition-all duration-500 rounded-full ${idx < score ? colors[score-1] : 'bg-transparent'}`;
+        });
+    });
+</script>
+</body>
+</html>

@@ -64,7 +64,6 @@ def login(request):
        
         if user is not None:
             auth_login(request, user)
-            messages.success(request, f"Bem-vindo de volta, {user.username}!")
             if user.is_superuser:
                 return redirect('registros')
             else:
@@ -75,5 +74,4 @@ def login(request):
         
 def user_logout(request):
     logout(request)
-    messages.info(request, "Você foi desconectado com segurança.")
-    return redirect('home')
+    return redirect('login')
